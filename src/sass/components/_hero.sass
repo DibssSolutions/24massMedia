@@ -1,0 +1,133 @@
+.hero-slider
+	position: relative
+	+fadeout(.8s)
+	white-space: nowrap
+	&.slick-initialized
+		+fadein
+	.slick-dots
+		position: absolute
+		left: calc((100% - 1280px)/2)
+		max-width: 60%
+		bottom: 68px
+		counter-reset: list
+		+r(1328)
+			left: 24px
+		li
+			vertical-align: top
+			display: inline-block
+			&:not(:first-child)
+				margin-left: 20px
+	&__dot
+		position: relative
+		+circle(40)
+		color: rgba($white, .32)
+		transition: color .8s
+		+fmt
+		background-color: transparent
+		+f(14px,600)
+		.slick-active &
+			color: $white
+			border-color: rgba($red, .24)
+		&:before
+			position: absolute
+			top: 0
+			left: 0
+			counter-increment: list
+			content: counter(list)
+			+circle(40)
+			text-align: center
+			line-height: 40px
+			border-radius: 50% 
+			transition: border-color .8s
+			transition-delay: 0.3s
+			mix-blend-mode: difference
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			+circle(40)
+			background-color: rgba($black, .24)
+			mix-blend-mode: hue
+		span
+			position: absolute
+			top: 0
+			left: 0
+			+circle(40)
+			border: 2px solid rgba($white, .16)
+			mix-blend-mode: difference
+			.slick-active &
+				border: 2px solid rgba($red, .16)
+				mix-blend-mode: unset
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			+rotate(-90)
+			+sm
+				display: none
+			circle
+				stroke: $red
+				.slick-initialized &
+					stroke-dasharray: 120
+					stroke-dashoffset: 0
+					animation: dashRevers 0.8s ease alternate forwards
+				.slick-initialized li.slick-active &
+					animation: dashPlay 6.8s linear alternate forwards
+	&__slide
+		width: 100%
+		padding-bottom: 90px
+		min-height: 630px
+		white-space: normal
+		vertical-align: top
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		display: inline-block
+	&__inner
+		display: flex
+	&__left
+		flex-grow: 1
+		padding: 141px 0 50px
+	&__right
+		padding-top: 97px
+		width: 280px
+		flex-shrink: 0
+	&__top
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		&:not(:last-child)
+			margin-bottom: 39px
+		.badge
+			margin-top: 5px
+			&:not(:last-child)
+				margin-right: 32px
+		.date
+			margin-top: 5px
+			letter-spacing: -0.01em
+	&__title-lg
+		max-width: 580px
+		+f(36px,900,1.44)
+		transition: color .3s
+		vertical-align: top
+		display: inline-block
+		+hover
+			color: $red
+		&:not([class*="color"])
+			color: currentColor
+	&__title
+		&:not(:last-child)
+			margin-bottom: 33px
+
+@keyframes dashPlay
+	from
+		stroke-dashoffset: 120
+	to
+		stroke-dashoffset: 0
+@keyframes dashRevers
+	from
+		stroke-dashoffset: 0
+	to
+		stroke-dashoffset: 120
+

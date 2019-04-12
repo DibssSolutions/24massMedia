@@ -1,0 +1,47 @@
+.footer
+	margin-top: 144px
+	border-top: 4px solid #F6F8F9
+	&__top
+		padding: 56px 0
+	&__row-sb
+		justify-content: space-between
+	&__left,
+	&__right
+		padding: 0 20px
+		width: 100%
+	&__left
+		+fs(45.4%)
+	&__right
+		padding: 0 20px
+		+fs(54.6%)
+		max-width: 680px
+	&__title
+		margin-bottom: 24px
+	&__list
+		+f(14px,400,1.43)
+		li
+			display: block
+			&:not(:last-child)
+				margin-bottom: 16px
+		a
+			color: currentColor
+			transition: color .3s
+			+hover
+				color: $red
+	&__bottom
+		padding: 33px 0 32px
+		background-color: #F6F8F9
+	&__topic
+		justify-content: space-between
+		align-items: center
+		display: flex
+		+f(14px,400,1.7)
+		&:not(:last-child)
+			margin-bottom: 32px
+			padding-bottom: 33px
+			border-bottom: 1px solid rgba(#CFCFD9, .4)
+	&__info
+		padding-left: 15px
+	&__copy
+		color: #A9A9B2
+		+f(14px,400,1.7)

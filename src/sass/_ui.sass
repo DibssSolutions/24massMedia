@@ -1,0 +1,128 @@
+.badge
+	padding: 3px 10px
+	color: $white
+	+f(11px,700,1.45)
+	letter-spacing: 0
+	vertical-align: top
+	display: inline-block
+	border-radius: 4px
+	transition: background-color .3s, color .3s
+	text-transform: uppercase
+	background-color: $blue
+	+hover
+		background-color: lighten($blue, 7%)
+	&_simple
+		+fos
+		padding: 0
+		border: none
+		color: #A9A9B2
+		background-color: transparent
+		+hover
+			color: $red
+			background-color: transparent
+	&_white
+		color: rgba($white, .6)
+		border: 1px solid rgba($white, .2)
+		background-color: transparent
+		+hover
+			color: $red
+			background-color: transparent
+	&_purple
+		background-color: #BE38D4
+		+hover
+			background-color: lighten(#BE38D4, 7%)
+	&_green
+		background-color: #03A536
+		+hover
+			background-color: lighten(#03A536, 7%)
+	&_yellow
+		background-color: #D09C17
+		+hover
+			background-color: lighten(#D09C17, 7%)
+		
+.date
+	+f(11px,700,1.45)
+	+fos
+	letter-spacing: -0.05em
+	opacity: .4
+	text-transform: uppercase
+	&_light
+		opacity: 1
+		color: #CFCFD9
+	&_int
+		text-transform: initial
+
+.link
+	position: relative
+	margin: 0 -20px
+	padding: 0 45px
+	+fmt
+	+f(16px,700,1.375)
+	color: $red
+	transition: padding-right .4s
+	vertical-align: top
+	display: inline-block
+	&:before
+		position: absolute
+		top: 50%
+		right: 100%
+		margin-right: -48px
+		margin-top: -24px
+		content: ''
+		+circle(48)
+		transition: transform .4s, right .4s, background-color .3s
+		background-color: #F6F8FC
+	&:after
+		position: absolute
+		content: ''
+		top: 50%
+		right: 100%
+		margin-top: -1px
+		margin-right: -28px
+		width: 12px
+		height: 2px
+		transition: transform .4s, right .4s, opacity .4s
+		background-color: $red
+	+hover
+		// padding-right: 45px
+		// padding-left: 0
+		&:before
+			right: 48px
+		&:after
+			right: 45px
+			transform: scaleX(0)
+			opacity: 0
+		.link__icon
+			transform: translateX(0) scale(1)
+			transition-delay: .3s
+	&:active
+		&:before
+			background-color: rgba($red, .2)
+	&_white
+		&:before
+			background-color: $white
+	&__text
+		position: relative
+		z-index: 1
+		&:before
+			position: absolute
+			content: ''
+			left: -45px
+			bottom: -12px
+			top: -12px
+			right: -45px
+	&__icon
+		position: absolute
+		right: 16px
+		top: 50%
+		margin-top: -6px
+		margin-left: 8px
+		font-size: 11px
+		transform: translateX(-12px) scale(0)
+		transition: transform .2s, right .2s
+		transition-delay: 0
+@keyframes dashPlay
+	from
+		transform: translateX(0) scale(1)
+	to
+		transform: translateX(16px) scale(0)

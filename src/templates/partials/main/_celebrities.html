@@ -1,0 +1,90 @@
+<!-- begin celebrities -->
+<div class="celebrities">
+	<div class="celebrities__inner inner">
+		<!-- begin head -->
+		<div class="celebrities__head head">
+			<div class="head__left">
+				<div class="head__title">
+					<h2 class="title-lg">Знаменитости</h2>
+				</div>
+				<div class="head__search">
+					{{ mixins.searchSimple() }}
+				</div>
+			</div>
+			<div class="head__right">
+				<a href="#" class="link link_white">
+					<span class="link__text">Все знаменитости</span>
+					{{ mixins.icon('arrow-right', 'link__icon') }}
+				</a>
+			</div>
+		</div>
+		<!-- end head -->
+		<div class="celebrities-slider js-celebrities-slider">
+			{% for item in [
+				{
+					img: 'celebrities-slider-img-1.png',
+					title: 'Роберт Дауни-младший',
+					text: 'Роберт Дауни-младший – американский актер, продюсер и музыкант. Известен по ролям в научно-фантастическом бое...'
+				},
+				{
+					img: 'celebrities-slider-img-2.png',
+					title: 'Шарлиз Терон',
+					text: 'Голливудская актриса и модель. Поклонники считают ее воплощением красоты, изысканности и стиля. Терон за...'
+				},
+				{
+					img: 'celebrities-slider-img-3.png',
+					title: 'Джастин Тимберлейк',
+					text: "Американский поп-певец, R’n'B-исполнитель, актер, композитор, продюсер, танцор. Обладатель 4 премий «Эмми» и ..."
+				},
+				{
+					img: 'celebrities-slider-img-4.png',
+					title: 'Дженнифер Лопес',
+					text: 'Американская актриса, певица, танцовщица, модельер, продюсер и бизнесвумен. Лопес впе...'
+				},
+				{
+					img: 'celebrities-slider-img-5.jpg',
+					title: 'Арнольд Шварценеггер',
+					text: 'Обладатель ряда премий по бодибилдингу, в том числе семикратный обладатель титула «Мист...'
+				},
+				{
+					img: 'celebrities-slider-img-1.png',
+					title: 'Роберт Дауни-младший',
+					text: 'Роберт Дауни-младший – американский актер, продюсер и музыкант. Известен по ролям в научно-фантастическом бое...'
+				},
+				{
+					img: 'celebrities-slider-img-2.png',
+					title: 'Шарлиз Терон',
+					text: 'Голливудская актриса и модель. Поклонники считают ее воплощением красоты, изысканности и стиля. Терон за...'
+				},
+				{
+					img: 'celebrities-slider-img-3.png',
+					title: 'Джастин Тимберлейк',
+					text: "Американский поп-певец, R’n'B-исполнитель, актер, композитор, продюсер, танцор. Обладатель 4 премий «Эмми» и ..."
+				},
+				{
+					img: 'celebrities-slider-img-4.png',
+					title: 'Дженнифер Лопес',
+					text: 'Американская актриса, певица, танцовщица, модельер, продюсер и бизнесвумен. Лопес впе...'
+				},
+				{
+					img: 'celebrities-slider-img-5.jpg',
+					title: 'Арнольд Шварценеггер',
+					text: 'Обладатель ряда премий по бодибилдингу, в том числе семикратный обладатель титула «Мист...'
+				}
+			] %}
+			<div class="celebrities-slider__slide">
+				<!-- begin celebrity -->
+				<a href="#" class="celebrity">
+					<div class="celebrity__img" style="background-image: url(./img/{{ item.img }});"></div>
+					<div class="celebrity__content">
+						<div class="celebrity__title title-sm">{{ item.title }}</div>
+						<p>{{ item.text }}</p>
+					</div>
+				</a>
+				<!-- end celebrity -->
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end celebrities -->

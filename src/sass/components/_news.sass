@@ -1,0 +1,59 @@
+.news
+	padding-top: 86px
+	&__topic
+		display: flex
+		&:not(:last-child)
+			margin-bottom: 50px
+	&__left
+		padding-right: 40px
+		flex: 1 1 auto
+	&__right
+		flex-shrink: 0
+		width: 400px
+	&__row
+		margin-bottom: -40px
+	&__col
+		margin-bottom: 40px
+	&__footer
+		margin-top: 64px
+
+.text-news-wrap
+	counter-reset: list
+.text-news
+	position: relative
+	padding-right: 14px
+	&:not(:first-child)
+		margin-top: 19px
+	&:not(:last-child)
+		padding-bottom: 23px
+		border-bottom: 1px solid rgba($white, .12)
+	&:first-child
+		&:before
+			right: 7px
+	&:before
+		position: absolute
+		counter-increment: list
+		content: counter(list)
+		top: 0
+		right: 0
+		+fgpb
+		+f(72px,700,1)
+		opacity: .08
+	&__title
+		color: currentColor
+		+f(16px,600,1.375)
+		transition: color .3s
+		display: block
+		+hover
+			color: $red
+	&__footer
+		margin-top: 4px
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		.badge
+			margin-top: 5px
+			&:not(:last-child)
+				margin-right: 24px
+		.date
+			margin-top: 5px

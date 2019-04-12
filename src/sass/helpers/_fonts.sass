@@ -5,3 +5,97 @@
 	font-family: $name
 	font-style: $style
 	font-weight: $weight
+
+$mainFamily: 'Montserrat'
+$gothamPro: 'GothamPro-Bold'
+$OpenSans: 'OpenSans'
+
+=fmt
+	font-family: $mainFamily, Arial, sans-serif
+=fgpb
+	font-family: $gothamPro, Arial, sans-serif
+=fos
+	font-family: $OpenSans, Arial, sans-serif
+
+@font-face
+	+fontdefault(normal, 900, $mainFamily)
+	+fontpath('Montserrat Black', 'Montserrat-Black', Montserrat-Black)
+@font-face
+	+fontdefault(italic, 900, $mainFamily)
+	+fontpath('Montserrat BlackItalic', 'Montserrat-BlackItalic', Montserrat-BlackItalic)
+	
+@font-face
+	+fontdefault(normal, 800, $mainFamily)
+	+fontpath('Montserrat ExtraBold', 'Montserrat-ExtraBold', Montserrat-ExtraBold)
+@font-face
+	+fontdefault(italic, 800, $mainFamily)
+	+fontpath('Montserrat ExtraBoldItalic', 'Montserrat-ExtraBoldItalic', Montserrat-ExtraBoldItalic)
+
+@font-face
+	+fontdefault(normal, 700, $mainFamily)
+	+fontpath('Montserrat Bold', 'Montserrat-Bold', Montserrat-Bold)
+@font-face
+	+fontdefault(italic, 700, $mainFamily)
+	+fontpath('Montserrat BoldItalic', 'Montserrat-BoldItalic', Montserrat-BoldItalic)
+
+@font-face
+	+fontdefault(normal, 600, $mainFamily)
+	+fontpath('Montserrat SemiBold', 'Montserrat-SemiBold', Montserrat-SemiBold)
+@font-face
+	+fontdefault(italic, 600, $mainFamily)
+	+fontpath('Montserrat SemiBoldItalic', 'Montserrat-SemiBoldItalic', Montserrat-SemiBoldItalic)
+
+@font-face
+	+fontdefault(normal, 500, $mainFamily)
+	+fontpath('Montserrat Medium', 'Montserrat-Medium', Montserrat-Medium)
+@font-face
+	+fontdefault(italic, 500, $mainFamily)
+	+fontpath('Montserrat-MediumItalic', 'Montserrat-MediumItalic', Montserrat-MediumItalic)
+
+@font-face
+	+fontdefault(normal, 400, $mainFamily)
+	+fontpath('Montserrat Regular', 'Montserrat-Regular', Montserrat-Regular)
+@font-face
+	+fontdefault(italic, 400, $mainFamily)
+	+fontpath('Montserrat Italic', 'Montserrat-Italic', Montserrat-Italic)
+
+@font-face
+	+fontdefault(normal, 300, $mainFamily)
+	+fontpath('Montserrat Light', 'Montserrat-Light', Montserrat-Light)
+@font-face
+	+fontdefault(italic, 300, $mainFamily)
+	+fontpath('Montserrat LightItalic', 'Montserrat-LightItalic', Montserrat-LightItalic)
+
+@font-face
+	+fontdefault(normal, 200, $mainFamily)
+	+fontpath('Montserrat ExtraLight', 'Montserrat-ExtraLight', Montserrat-ExtraLight)
+@font-face
+	+fontdefault(italic, 200, $mainFamily)
+	+fontpath('Montserrat ExtraLightItalic', 'Montserrat-ExtraLightItalic', Montserrat-ExtraLightItalic)
+
+@font-face
+	+fontdefault(normal, 100, $mainFamily)
+	+fontpath('Montserrat Thin', 'Montserrat-Thin', Montserrat-Thin)
+@font-face
+	+fontdefault(italic, 100, $mainFamily)
+	+fontpath('Montserrat ThinItalic', 'Montserrat-ThinItalic', Montserrat-ThinItalic)
+
+// GOTEM
+@font-face
+	+fontdefault(normal, 700, $gothamPro)
+	+fontpath('GothamPro Bold', 'GothamPro-Bold', GothamPro-Bold)
+
+// OPENSANS
+@font-face
+	+fontdefault(normal, 700, $OpenSans)
+	+fontpath('OpenSans Bold', 'OpenSans-Bold', OpenSans-Bold)
+@font-face
+	+fontdefault(italic, 700, $OpenSans)
+	+fontpath('OpenSans OpenSans-BoldItalic', 'OpenSans-OpenSans-BoldItalic', OpenSans-OpenSans-BoldItalic)
+
+@font-face
+	+fontdefault(normal, 400, $OpenSans)
+	+fontpath('OpenSans', 'OpenSans-Regular', OpenSans-Regular)
+@font-face
+	+fontdefault(italic, 400, $OpenSans)
+	+fontpath('OpenSans Italic', 'OpenSans-Italic', OpenSans-Italic)

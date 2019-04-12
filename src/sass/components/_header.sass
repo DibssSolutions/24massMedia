@@ -1,0 +1,199 @@
+.header
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 2
+	padding: 22px 0
+	width: 100%
+	+f(16px,600,1.375)
+	border-bottom: 1px solid #E2E6E8
+	box-shadow: 0 2px 12px rgba(#000, 0.12)
+	background-color: $white
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+.logo
+	vertical-align: top
+	display: inline-block
+	img
+		max-width: 100%
+		display: block
+	&__hide
+		display: none
+.nav
+	margin: 0 30px 0 5px
+	align-items: center
+	flex-wrap: wrap
+	display: flex
+	&__list
+		display: flex
+	&__item
+		&:not(:first-child)
+			margin-left: 33px
+	&__link
+		position: relative
+		padding: 0 8px
+		transition: color .3s ease-in-out
+		color: currentColor
+		display: block
+		+hover
+			color: $red
+		&:before
+			position: absolute
+			content: ''
+			top: 100%
+			left: 0
+			right: 0
+			margin-top: 29px
+			z-index: 1
+			height: 1px
+			+fadeout(.3s)
+			background-color: $red
+		&:after
+			position: absolute
+			content: ''
+			top: -29px
+			left: 0
+			width: 100%
+			bottom: -29px
+		&.is-active
+			color: $red
+			&:before
+				+fadein
+	&__btn
+		position: relative
+		margin-left: 41px
+		padding-right: 37px
+		+fmt
+		color: currentColor
+		transition: color .3s ease-in-out
+		+f(16px,600,1.375)
+		background-color: transparent
+		+hover
+			color: $red
+			.nav__btn-points
+				background-color: $red
+				&:before,
+				&:after
+					background-color: $red
+		&:after
+			position: absolute
+			content: ''
+			top: -29px
+			left: 0
+			width: 100%
+			bottom: -29px
+	&__btn-points
+		position: absolute
+		top: 50%
+		right: 0
+		margin-top: -2px
+		+circle(4)
+		display: block
+		transition: background-color .3s ease-in-out
+		background-color: #DEDEDE
+		transition-delay: .1s
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			+circle(4)
+			transition: background-color .3s ease-in-out
+			background-color: #DEDEDE
+		&:before
+			right: 8px
+			transition-delay: .05
+		&:after
+			right: 16px
+	&__wrap
+		+hover
+			.nav__out
+				+fadein
+			.nav__btn
+				color: $red
+				.nav__btn-points
+					background-color: $red
+					&:before,
+					&:after
+						background-color: $red
+	&__out
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		overflow: auto
+		height: 100vh
+		+fadeout(.3s)
+		border-top: 5px solid #F6F8F9
+		background-color: rgba($black, .32)
+	&__nav-full
+		padding: 32px 0
+		box-shadow: 0 8px 24px rgba(#000, 0.16)
+		background-color: $white
+.nav-full
+	position: relative
+	margin: 0 -20px
+	display: flex
+	flex-wrap: wrap
+	&:before
+		position: absolute
+		content: ''
+		left: 0
+		bottom: 0
+		right: 0
+		height: 1px
+		background-color: $white
+	&__item
+		padding: 0 20px
+		+fs(25%)
+	&__inner
+		padding: 27px 0 31px
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		border-bottom: 1px solid #F2F2F2
+	&__head
+		margin-bottom: 24px
+	&__category-title,
+	&__news-title
+		color: currentColor
+		transition: color .3s ease-in-out
+		+hover
+			color: $red
+	&__category-title
+		+f(24px,700,1.33)
+	&__news-title
+		+f(16px,600,1.375)
+	&__date
+		margin-top: 12px
+		text-transform: uppercase
+		+f(11px,700,1.009)
+		color: $lightGray
+.novelty
+	color: currentColor
+	display: flex
+	align-items: center
+	transition: color .3s ease-in-out
+	+hover
+		color: $red
+	&__logo
+		flex-shrink: 0
+		width: 30px
+		img
+			max-width: 100%
+			display: block
+	&__text
+		position: relative
+		margin-left: 25px
+		color: currentColor
+		&:before
+			position: absolute
+			content: ''
+			top: -29px
+			left: -55px
+			right: 0
+			bottom: -29px

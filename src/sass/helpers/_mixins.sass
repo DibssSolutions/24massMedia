@@ -279,9 +279,9 @@
   @if $letter-spacing != null
     letter-spacing: ($letter-spacing / 1000) + em
     
-=flex-size($val)
+=fs($val)
   flex: 0 0 $val
-  min-width: $val
+  max-width: $val
   
 =fadeout($tr)
   opacity: 0
@@ -297,36 +297,37 @@
   width: $size + px
   border-radius: 50%
 
-=generate_grid($columns: 12, $sizeXs: false, $sizeSm: false, $sizeMd: false, $sizeLg: false, $padding: 15px)
+=generate_grid($columns: 12, $sizeXs: true, $sizeSm: true, $sizeMd: true, $sizeLg: true, $padding: 20px)
   .row
     margin: 0px -#{$padding}
     display: flex
     flex-wrap: wrap
-  [class*='col']
+  [class*='col']:not([class*='color'])
     padding: 0 $padding
+    width: 100%
   @for $i from 1 through $columns
     $width: percentage($i / $columns)
     .col-#{$i}
       flex: 0 0 $width
-      min-width: $width
+      max-width: $width
     @if($sizeLg)
       .col-lg-#{$i}
         +r(1259)
           flex: 0 0 $width
-          min-width: $width
+          max-width: $width
     @if($sizeMd)
       .col-md-#{$i}
         +r(1023)
           flex: 0 0 $width
-          min-width: $width
+          max-width: $width
     @if($sizeSm)
       .col-sm-#{$i}
         +r(767)
           flex: 0 0 $width
-          min-width: $width
+          max-width: $width
     @if($sizeXs)
       .col-xs-#{$i}
         +r(550)
           flex: 0 0 $width
-          min-width: $width
+          max-width: $width
 

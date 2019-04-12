@@ -1,0 +1,68 @@
+<!-- begin footer -->
+<div class="footer">
+	<div class="footer__top">
+		<div class="footer__inner inner">
+			<div class="footer__row-sb row">
+				<div class="footer__left">
+					<h4 class="footer__title title-sm">Разделы</h4>
+					<div class="footer__row row">
+						<div class="footer__col col-4">
+							<ul class="footer__list">
+								{% for text in ['Шоу-бизнес', 'Общество', 'Наука', 'Факты'] %}
+								   <li><a href="#">{{ text }}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="footer__col col-4">
+							<ul class="footer__list">
+								{% for text in ['Политика', 'Экономика', 'Происшествия', 'Путешествия'] %}
+								    <li><a href="#">{{ text }}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="footer__col col-4">
+							<ul class="footer__list">
+								{% for text in ['Дом и быт', 'Автомобили', 'Армия и ОПК', 'Архив'] %}
+								    <li><a href="#">{{ text }}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__right">
+					<div class="footer__row row">
+						<div class="footer__col col-4">
+							<h4 class="footer__title title-sm">О проекте</h4>
+							<ul class="footer__list">
+								{% for text in ['Редакция сайта', 'Реклама'] %}
+								    <li><a href="#">{{ text }}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="footer__col col-8">
+							<h4 class="footer__title title-sm">О проекте</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer__bottom">
+		<div class="footer__inner inner">
+			<div class="footer__topic">
+				<div class="footer__logo">
+					<!-- begin logo -->
+					<a href="/" class="logo">
+						<img src="./img/logo.svg" alt="logo">
+					</a>
+					<!-- end logo -->
+				</div>
+				<div class="footer__info">Нашли опечатку? Помогите исправить её! <strong>Выделите ее и нажмите CTRL + ENTER</strong></div>
+			</div>
+			<div class="footer__copy">
+				&copy; «24smi.org», 2010 - 2019. Использование материалов, авторские права на которые принадлежат 24smi.org, возможно только с прямой активной ссылкой на первоисточник. Редакция не несет ответственности за достоверность информации, содержащейся в рекламных объявлениях. Категория интернет-ресурса 18+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end footer -->

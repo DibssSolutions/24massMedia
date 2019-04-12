@@ -1,1 +1,111 @@
-<p>Hello from partials/_header.html</p>
+{% macro block(props) %}
+<!-- begin header -->
+<header class="header">
+	<div class="header__inner inner">
+		<!-- begin logo -->
+		<a href="/" class="logo">
+			<h1 class="logo__hide">24сми</h1>
+			<img src="./img/logo.svg" alt="logo">
+		</a>
+		<!-- end logo -->
+		<!-- begin nav -->
+		<div class="nav">
+			<ul class="nav__list">
+				{% for text in ['Шоу-бизнес', 'Общество', 'Наука', 'Факты'] %}
+				<li class="nav__item">
+					<a href="#" class="nav__link{% if props.active == loop.index %} is-active{% endif %}">{{ text }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="nav__wrap">
+				<button class="nav__btn js-nav-btn" type="button">Еще<span class="nav__btn-points"></span></button>
+				<div class="nav__out">
+					<div class="nav__nav-full">
+						<div class="nav__inner inner">
+							<ul class="nav-full">
+								{% for item in [
+									{
+										title: 'Шоу-бизнес',
+										newsTitle: 'Алла Михеева оскорбила жителей Бурятии, потушив благовония в чае',
+										date: '14.02 в 16:13'
+									},
+									{
+										title: 'Факты',
+										newsTitle: 'Интересные факты о инопланетянах: виды, происхождение, фото',
+										date: '15.01 в 10:32'
+									},
+									{
+										title: 'Происшествия',
+										newsTitle: 'На Филиппинах двое россиян на мотобайке столкнулись с общественным транспортом',
+										date: '02.01 в 19:38'
+									},
+									{
+										title: 'Автомобили',
+										newsTitle: 'В Британии продают за $56 млн самый дорогой в мире ретро-автомобиль “Talacrest”',
+										date: '11.01 в 16:13'
+									},
+									{
+										title: 'Общество',
+										newsTitle: 'Глава SpaceX по-русски ответил на мем «Как тебе такое, Илон Маск?»',
+										date: '13.02 в 12:17'
+									},
+									{
+										title: 'Политика',
+										newsTitle: 'Трамп пригрозил "разогнать" правительство, если ему не дадут построить стену',
+										date: '29.01 в 18:43'
+									},
+									{
+										title: 'Путешествия',
+										newsTitle: 'Трамп пригрозил "разогнать" правительство, если ему не дадут построить стену',
+										date: '17.01 в 14:19'
+									},
+									{
+										title: 'Армия и ОПК',
+										newsTitle: 'Россия созывает экстренное заседание Совбеза ООН из-за Сирии',
+										date: '14.01 в 11:10'
+									},
+									{
+										title: 'Наука',
+										newsTitle: 'Минздрав РФ: долголетие на 50% зависит от привычек и генетики',
+										date: '13.02 в 15:40'
+									},
+									{
+										title: 'Экономика',
+										newsTitle: 'В России предложили сделать коммунальные услуги бесплатными',
+										date: '12.02 в 09:21'
+									},
+									{
+										title: 'Дом и быт',
+										newsTitle: 'Оптимальный выбор котла в частный дом: газовый или дизельный?',
+										date: '12.01 в 08:38'
+									}
+								] %}
+								<li class="nav-full__item">
+									<div class="nav-full__inner">
+										<div class="nav-full__wrap">
+											<div class="nav-full__head">
+												<a href="#" class="nav-full__category-title">{{ item.title }}</a>
+											</div>
+											<a href="#" class="nav-full__news-title">{{ item.newsTitle }}</a>
+										</div>
+										<div class="nav-full__date">{{ item.date }}</div>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end nav -->
+		<!-- begin novelty -->
+		<a href="#" class="novelty">
+			<span class="novelty__logo"><img src="./img/novelty-logo.png" alt="novelty"></span>
+			<span class="novelty__text">Знаменитости</span>
+		</a>
+		<!-- end novelty -->
+	</div>
+</header>
+<!-- end header -->
+{% endmacro %}

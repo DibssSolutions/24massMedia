@@ -1,0 +1,21 @@
+.btn
+	padding: 16px 20px
+	min-width: 240px
+	color: $red
+	+fmt
+	+f(16px,600,1.375)
+	text-align: center
+	vertical-align: top
+	border-radius: 4px
+	border: 1px solid #CFCFD9
+	background-color: transparent
+	transition: border-color .3s
+	display: inline-block
+	+hover
+		border-color: $red
+	&:disabled
+		color: #CFCFD9
+		+hover
+			border-color: #CFCFD9
+	&_full
+		width: 100%

@@ -1,0 +1,133 @@
+<!-- begin hero-slider -->
+<div class="hero-slider js-hero-slider">
+	<div class="hero-slider__slide" style="background-image: url(./img/main-hero-slide-1.jpg);">
+		<div class="hero-slider__inner inner">
+			<div class="hero-slider__left">
+				<div class="hero-slider__top">
+					<a href="#" class="badge">Шоу-бизнес</a>
+					<div class="date date_dark">Сегодня в 15:45</div>
+				</div>
+				<a href="#" class="hero-slider__title-lg">«Моя работа — их любить» — Николь Кидман о своих приемных детях</a>
+			</div>
+			<div class="hero-slider__right color-white">
+				<div class="hero-slider__title title">Последние новости</div>
+				<div class="text-news-wrap">
+					{% for item in [
+						{
+							title: 'В Петербурге рассмотрят иск к «ВКонтакте» о разглашении персональных данных',
+							badge: 'Факты',
+							date: '20 мин. назад'
+						},
+						{
+							title: 'В человеческих костях нашли ранее неизвестный тип кровеносных сосудов',
+							badge: 'Наука',
+							date: '7 часов назад'
+						},
+						{
+							title: 'Мария Шарапова примет участие теннисном турнире в Санкт-Петербурге',
+							badge: 'Спорт',
+							date: '12 часов назад'
+						}
+					] %}
+					<!-- begin text-news -->
+					<div class="text-news">
+						<a href="#" class="text-news__title">{{ item.title }}</a>
+						<div class="text-news__footer">
+							<a href="#" class="badge badge_white">{{ item.badge }}</a>
+							<div class="date date_white">{{ item.date }}</div>
+						</div>
+					</div>
+					<!-- end text-news -->
+					{% endfor %}
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div class="hero-slider__slide" style="background-image: url(./img/main-hero-slide-2.jpg);">
+		<div class="hero-slider__inner inner">
+			<div class="hero-slider__left">
+				<div class="hero-slider__top">
+					<a href="#" class="badge">Шоу-бизнес</a>
+					<div class="date date_dark">Сегодня в 15:45</div>
+				</div>
+				<a href="#" class="hero-slider__title-lg color-white">«Моя работа — их любить» — Николь Кидман о своих приемных детях</a>
+			</div>
+			<div class="hero-slider__right color-white">
+				<div class="hero-slider__title title">Последние новости</div>
+				<div class="text-news-wrap">
+					{% for item in [
+						{
+							title: 'В Петербурге рассмотрят иск к «ВКонтакте» о разглашении персональных данных',
+							badge: 'Факты',
+							date: '20 мин. назад'
+						},
+						{
+							title: 'В человеческих костях нашли ранее неизвестный тип кровеносных сосудов',
+							badge: 'Наука',
+							date: '7 часов назад'
+						},
+						{
+							title: 'Мария Шарапова примет участие теннисном турнире в Санкт-Петербурге',
+							badge: 'Спорт',
+							date: '12 часов назад'
+						}
+					] %}
+					<!-- begin text-news -->
+					<div class="text-news">
+						<a href="#" class="text-news__title">{{ item.title }}</a>
+						<div class="text-news__footer">
+							<a href="#" class="badge badge_white">{{ item.badge }}</a>
+							<div class="date date_white">{{ item.date }}</div>
+						</div>
+					</div>
+					<!-- end text-news -->
+					{% endfor %}
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div class="hero-slider__slide" style="background-image: url(./img/main-hero-slide-3.jpg);">
+		<div class="hero-slider__inner inner">
+			<div class="hero-slider__left">
+				<div class="hero-slider__top">
+					<a href="#" class="badge">Шоу-бизнес</a>
+					<div class="date date_dark">Сегодня в 15:45</div>
+				</div>
+				<a href="#" class="hero-slider__title-lg">«Моя работа — их любить» — Николь Кидман о своих приемных детях</a>
+			</div>
+			<div class="hero-slider__right">
+				<div class="hero-slider__title title">Последние новости</div>
+				<div class="text-news-wrap">
+					{% for item in [
+						{
+							title: 'В Петербурге рассмотрят иск к «ВКонтакте» о разглашении персональных данных',
+							badge: 'Факты',
+							date: '20 мин. назад'
+						},
+						{
+							title: 'В человеческих костях нашли ранее неизвестный тип кровеносных сосудов',
+							badge: 'Наука',
+							date: '7 часов назад'
+						},
+						{
+							title: 'Мария Шарапова примет участие теннисном турнире в Санкт-Петербурге',
+							badge: 'Спорт',
+							date: '12 часов назад'
+						}
+					] %}
+					<!-- begin text-news -->
+					<div class="text-news">
+						<a href="#" class="text-news__title">{{ item.title }}</a>
+						<div class="text-news__footer">
+							<a href="#" class="badge badge_white">{{ item.badge }}</a>
+							<div class="date date_white">{{ item.date }}</div>
+						</div>
+					</div>
+					<!-- end text-news -->
+					{% endfor %}
+				</div>
+			</div>
+		</div>			
+	</div>
+</div>
+<!-- end hero-slider -->
