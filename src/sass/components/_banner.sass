@@ -1,0 +1,79 @@
+.banner
+	position: relative
+	z-index: 1
+	padding: 64px 0 58px
+	text-align: center
+	&:not(:first-child)
+		.article &,
+		article &
+			margin-top: 56px
+	&:not(:last-child)
+		.article &,
+		article &
+			margin-bottom: 56px
+	img
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+		width: 100%
+		height: 100%
+		object-fit: cover
+		object-position: center
+	&__title
+		margin-bottom: 24px
+		+fmt
+		+f(28px,700,1.4)
+		display: block
+	&__text
+		display: block
+	&__buttons
+		margin-top: 36px
+		display: block
+	&__left
+		padding-left: 88px
+		padding-bottom: 10px
+		max-width: 480px
+		text-align: left
+		.btn-simple
+			min-width: 280px
+
+.sm-banner
+	min-height: 345px
+	height: 100%
+	color: $white
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	display: block
+	+md
+		min-height: 300px
+	+hover
+		.sm-banner__title
+			color: $red
+	&_bot
+		align-items: flex-end
+		display: flex
+	&__inner
+		padding: 32px
+		width: 100%
+		+md
+			padding: 25px
+	&__badge
+		margin-bottom: 15px
+		+md
+			margin-bottom: 7px
+		.badge
+			margin: 0 5px 5px 0
+	&__title
+		text-transform: uppercase
+		max-width: 274px
+		+f(18px,700,1.55)
+		transition: color .3s
+		&:not(:last-child)
+			margin-bottom: 15px
+	&__text
+		+fos
+		+f(11px,700,1.43)
+		letter-spacing: 0.04em
+		text-transform: uppercase

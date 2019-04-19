@@ -2,4 +2,14 @@ ProjectTitle: template
 
 PageList:
 - file: page.html
+  ready: 100
+- file: category.html
+  ready: 100
+- file: category-news.html
+  ready: 100
+- file: persons.html
+  ready: 50
+- file: card.html
+  ready: 50
+- file: photo.html
   ready: 50

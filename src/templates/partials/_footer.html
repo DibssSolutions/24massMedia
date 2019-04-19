@@ -2,25 +2,37 @@
 <div class="footer">
 	<div class="footer__top">
 		<div class="footer__inner inner">
-			<div class="footer__row-sb row">
-				<div class="footer__left">
-					<h4 class="footer__title title-sm">Разделы</h4>
-					<div class="footer__row row">
-						<div class="footer__col col-4">
+			<div class="footer__subscription tablet-show">
+				<h4 class="footer__title title-xs">Получайте еженедельно свежие новости</h4>
+				<!-- begin subscription -->
+				<form action="/" class="subscription">
+					<div class="subscription__control"><input type="text" placeholder="Введите ваш e-mail"></div>
+					<button class="subscription__submit btn-simple" type="submit">
+						Подписаться
+						{{ mixins.icon('tel') }}
+					</button>
+				</form>
+				<!-- end subscription -->
+			</div>
+			<div class="footer__row-sb row row-flex" data-accordion-group>
+				<div class="footer__left" data-accordion-item data-accordion-open data-accordion-on-init="768">
+					<h4 class="footer__title title-xs" data-accordion-trigger>Разделы{{ mixins.icon('arrow-bottom') }}</h4>
+					<div class="footer__row row" data-accordion-container>
+						<div class="footer__col col-4 col-sm-12">
 							<ul class="footer__list">
 								{% for text in ['Шоу-бизнес', 'Общество', 'Наука', 'Факты'] %}
 								   <li><a href="#">{{ text }}</a></li>
 								{% endfor %}
 							</ul>
 						</div>
-						<div class="footer__col col-4">
+						<div class="footer__col col-4 col-sm-12">
 							<ul class="footer__list">
 								{% for text in ['Политика', 'Экономика', 'Происшествия', 'Путешествия'] %}
 								    <li><a href="#">{{ text }}</a></li>
 								{% endfor %}
 							</ul>
 						</div>
-						<div class="footer__col col-4">
+						<div class="footer__col col-4 col-sm-12">
 							<ul class="footer__list">
 								{% for text in ['Дом и быт', 'Автомобили', 'Армия и ОПК', 'Архив'] %}
 								    <li><a href="#">{{ text }}</a></li>
@@ -29,18 +41,38 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer__right">
-					<div class="footer__row row">
-						<div class="footer__col col-4">
-							<h4 class="footer__title title-sm">О проекте</h4>
-							<ul class="footer__list">
+				<div class="footer__right" data-accordion-item data-accordion-on-init="768">
+					<div class="footer__row row row-flex">
+						<div class="footer__col col-4 col-md-12">
+							<h4 class="footer__title title-xs" data-accordion-trigger>О проекте{{ mixins.icon('arrow-bottom') }}</h4>
+							<ul class="footer__list" data-accordion-container>
 								{% for text in ['Редакция сайта', 'Реклама'] %}
 								    <li><a href="#">{{ text }}</a></li>
 								{% endfor %}
 							</ul>
 						</div>
-						<div class="footer__col col-8">
-							<h4 class="footer__title title-sm">О проекте</h4>
+						<div class="footer__col col-8 tablet-hide">
+							<h4 class="footer__title title-xs">Получайте еженедельно свежие новости</h4>
+							<!-- begin subscription -->
+							<form action="/" class="subscription">
+								<div class="subscription__control"><input type="text" placeholder="Введите ваш e-mail"></div>
+								<button class="subscription__submit btn-simple" type="submit">Подписаться</button>
+							</form>
+							<!-- end subscription -->
+							<!-- begin soc -->
+							<div class="footer__soc soc">
+								<div class="soc__description">Мы в соцсетях:</div>
+								<ul class="soc__list">
+									{% for icon in ['vk', 'tel', 'tw', 'youtube', 'inst'] %}
+									    <li class="soc__item">
+									    	<a href="#">
+										    	{{ mixins.icon(icon) }}
+										    </a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+							<!-- end soc -->
 						</div>
 					</div>
 				</div>
@@ -50,16 +82,34 @@
 	<div class="footer__bottom">
 		<div class="footer__inner inner">
 			<div class="footer__topic">
-				<div class="footer__logo">
+				<div class="footer__logo mobile-hide">
 					<!-- begin logo -->
 					<a href="/" class="logo">
 						<img src="./img/logo.svg" alt="logo">
 					</a>
 					<!-- end logo -->
 				</div>
-				<div class="footer__info">Нашли опечатку? Помогите исправить её! <strong>Выделите ее и нажмите CTRL + ENTER</strong></div>
+				<div class="footer__info">
+					<div class="tablet-hide">Нашли опечатку? Помогите исправить её! <strong>Выделите ее и нажмите CTRL + ENTER</strong></div>
+					<div class="tablet-show">
+						<!-- begin soc -->
+						<div class="soc">
+							<div class="soc__description mobile-hide">Мы в соцсетях:</div>
+							<ul class="soc__list">
+								{% for icon in ['vk', 'tel', 'tw', 'youtube', 'inst'] %}
+								    <li class="soc__item">
+								    	<a href="#">
+									    	{{ mixins.icon(icon) }}
+									    </a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<!-- end soc -->
+					</div>
+				</div>
 			</div>
-			<div class="footer__copy">
+			<div class="footer__copy mobile-hide">
 				&copy; «24smi.org», 2010 - 2019. Использование материалов, авторские права на которые принадлежат 24smi.org, возможно только с прямой активной ссылкой на первоисточник. Редакция не несет ответственности за достоверность информации, содержащейся в рекламных объявлениях. Категория интернет-ресурса 18+
 			</div>
 		</div>

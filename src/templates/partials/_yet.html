@@ -1,0 +1,99 @@
+<!-- begin yet -->
+<div class="yet">
+	<div class="yet__inner inner">
+		<h3 class="yet__title title">Читайте также</h3>
+		<div class="yet__row row-flex">
+			{% for item in [
+				{
+					img: 'news-img-1.jpg',
+					badgeColor: 'purple',
+					badgeContent: 'Общество',
+					date: '17 января в 16:54',
+					title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+				},
+				{
+					img: 'news-img-2.jpg',
+					badgeContent: 'Шоу-бизнес',
+					date: '17 января в 15:55',
+					title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+				},
+				{
+					img: 'news-img-1.jpg',
+					badgeColor: 'purple',
+					badgeContent: 'Общество',
+					date: '17 января в 16:54',
+					title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+				}
+			] %}
+			<div class="news__col col-4 col-md-6 col-sm-12">
+				{{ mixins.card({
+					img: item.img,
+					badgeColor: item.badgeColor,
+					badgeContent: item.badgeContent,
+					date: item.date,
+					title: item.title
+				}) }}  
+			</div>
+			{% endfor %}
+			<div class="news__col col-4 col-md-6 col-sm-12">
+				<!-- begin sm-banner -->
+				<a href="#" class="sm-banner" style="background-image: url(./img/banner-sm-1.jpg);">
+					<div class="sm-banner__inner">
+						<div class="sm-banner__badge">
+							<span class="badge badge_red">с 23 января по 28 февраля</span>
+						</div>
+						<div class="sm-banner__title">Рассрочка без переплат на 24 месяца</div>
+						<div class="sm-banner__text">на все телевизоры LG</div>
+					</div>
+				</a>
+				<!-- end sm-banner -->
+			</div>
+			{% for item in [
+				{
+					img: 'news-img-1.jpg',
+					badgeColor: 'purple',
+					badgeContent: 'Общество',
+					date: '17 января в 16:54',
+					title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+				},
+				{
+					img: 'news-img-2.jpg',
+					badgeContent: 'Шоу-бизнес',
+					date: '17 января в 15:55',
+					title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+				},
+				{
+					img: 'news-img-1.jpg',
+					badgeColor: 'purple',
+					badgeContent: 'Общество',
+					date: '17 января в 16:54',
+					title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+				},
+				{
+					img: 'news-img-2.jpg',
+					badgeContent: 'Шоу-бизнес',
+					date: '17 января в 15:55',
+					title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+				},
+				{
+					img: 'news-img-1.jpg',
+					badgeColor: 'purple',
+					badgeContent: 'Общество',
+					date: '17 января в 16:54',
+					title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+				}
+			] %}
+			<div class="news__col col-4 col-md-6 col-sm-12">
+				{{ mixins.card({
+					img: item.img,
+					badgeColor: item.badgeColor,
+					badgeContent: item.badgeContent,
+					date: item.date,
+					title: item.title
+				}) }}  
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end yet -->

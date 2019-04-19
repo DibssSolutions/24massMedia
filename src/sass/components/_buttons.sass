@@ -15,7 +15,34 @@
 		border-color: $red
 	&:disabled
 		color: #CFCFD9
+		cursor: default
 		+hover
 			border-color: #CFCFD9
+	&_full
+		width: 100%
+.btn-simple
+	padding: 14px 20px
+	min-width: 160px
+	color: $white
+	+fgp
+	+f(14px,500,1.43)
+	text-align: center
+	border-radius: 4px
+	background-color: $red
+	transition: background-color .3s
+	vertical-align: top
+	display: inline-block
+	+hover
+		background-color: #FB695E
+		&:active
+			background-color: #EF4A3E
+	&:active
+		background-color: #EF4A3E
+	&:disabled
+		color: #A9A9B2
+		cursor: default
+		background-color: #CFCFD9
+		+hover
+			background-color: #CFCFD9
 	&_full
 		width: 100%

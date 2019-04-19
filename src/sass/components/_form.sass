@@ -30,3 +30,39 @@
 			display: inline-block
 			&::placeholder
 				color: #A9A9B2
+
+.search
+	position: relative
+	align-items: center
+	display: flex
+	&__icon
+		position: absolute
+		top: 50%
+		left: 19px
+		margin-top: -8px
+		font-size: 0
+		line-height: 1
+		.icon
+			font-size: 16px
+	&__control
+		flex: 1 1 auto
+		margin-right: -4px
+		.input input
+			padding-left: 56px
+	&__submit
+		flex: 0 0 auto
+
+.input input
+	padding: 5px 20px
+	height: 48px
+	width: 100%
+	+fgp
+	color: $black
+	caret-color: $red
+	+f(14px,400,1.24)
+	border: 1px solid $lightGray
+	border-radius: 4px
+	background-color: transparent
+	display: inline-block
+	&::placeholder
+		color: $gray

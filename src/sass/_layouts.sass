@@ -23,16 +23,49 @@
 
 .out
 	position: relative
-	padding-top: 81px
+	padding-top: 82px
 	overflow: hidden
+	+sm
+		padding-top: 56px
+	&__inner
+		+md
+			position: relative
+			left: 0
+			transition: all .3s
+		.is-open-menu &
+			+md
+				left: calc(100% - 68px)
+			+sm
+				left: calc(100% - 56px)
 
 .inner
 	margin: 0 auto
 	padding: 0 24px
 	max-width: 1328px
+	+sm
+		padding: 0 20px
+.main
+	padding-right: 60px
+	+md
+		padding-right: 16px
+.sidebar
+	will-change: min-height
+	&__wrap
+		margin-right: -40px
+		padding-bottom: 40px
+	&__inner
+		transform: translate(0, 0)
+		transform: translate3d(0, 0, 0)
+		will-change: position, transform
+	&__info
+		&:not(:first-child)
+			margin-top: 40px
+	&__field
+		&:not(:last-child)
+			margin-bottom: 40px
 
 .head
-	margin-bottom: 44px
+	margin-bottom: 40px
 	justify-content: space-between
 	align-items: center
 	display: flex
@@ -40,8 +73,11 @@
 		display: flex
 		align-items: center
 		flex-wrap: wrap
+		flex: 1 1
 	&__right
 		text-align: right
+		+sm
+			display: none
 		.link
 			margin-top: 8px
 	&__title
@@ -49,3 +85,48 @@
 			margin-right: 65px
 	&__search
 		margin-top: 2px
+		+md
+			display: none
+	&__inner
+		width: 100%
+	&__description
+		&:not(:first-child)
+			margin-top: 8px
+
+.head-main
+	justify-content: space-between
+	align-items: center
+	display: flex
+	&__left
+		padding-right: 16px
+		flex: 1 1 auto
+	&__search
+		flex: 0 0 auto
+		width: 400px
+
+.yet
+	padding: 80px 0 44px
+	background-color: #F6F8F9
+	+md
+		padding: 54px 0 26px
+	+sm
+		padding: 39px 0 26px
+	&_bottom
+		margin-bottom: -148px
+	&__title
+		margin-bottom: 40px
+		+md
+			margin-bottom: 32px
+		+sm
+			margin-bottom: 27px
+
+.tablet-hide
+	+md
+		display: none
+.tablet-show
+	display: none
+	+md
+		display: block
+.mobile-hide
+	+sm
+		display: none

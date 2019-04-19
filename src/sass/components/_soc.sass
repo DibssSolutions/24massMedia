@@ -1,0 +1,38 @@
+.soc
+	align-items: center
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	&__description
+		padding-right: 10px
+		+f(14px,400,1.43)
+		color: $gray
+		+md
+			padding-right: 25px
+		+sm
+			padding-right: 15px
+			font-size: 13px
+	&__list
+		align-items: center
+		flex-wrap: wrap
+		display: flex
+	&__item
+		padding: 2px 0
+		font-size: 0
+		line-height: 1
+		&:not(:last-child)
+			margin-right: 28px
+			+sm
+				margin-right: 25px
+		a
+			color: currentColor
+			transition: color .3s
+			display: block
+			+hover
+				color: $red
+				&:active
+					color: #EF4A3E
+			&:active
+				color: #EF4A3E
+		.icon
+			font-size: 20px

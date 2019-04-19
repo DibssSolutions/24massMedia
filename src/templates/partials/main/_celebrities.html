@@ -5,7 +5,7 @@
 		<div class="celebrities__head head">
 			<div class="head__left">
 				<div class="head__title">
-					<h2 class="title-lg">Знаменитости</h2>
+					<h2 class="title">Знаменитости</h2>
 				</div>
 				<div class="head__search">
 					{{ mixins.searchSimple() }}
@@ -78,7 +78,7 @@
 					<div class="celebrity__img" style="background-image: url(./img/{{ item.img }});"></div>
 					<div class="celebrity__content">
 						<div class="celebrity__title title-sm">{{ item.title }}</div>
-						<p>{{ item.text }}</p>
+						<div class="celebrity__text js-dots">{{ item.text }}</div>
 					</div>
 				</a>
 				<!-- end celebrity -->

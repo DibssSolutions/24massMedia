@@ -1,18 +1,39 @@
-.title-lg
+.title-lg,
+h1
 	+fmt
 	+f(32px, 700, 1.44)
-.title
+	+md
+		font-size: 28px
+	+sm
+		font-size: 20px
+.title,
+h2
 	+fmt
-	+f(24px, 700, 1.33333)
-.title-md
+	+f(28px, 700, 1.33333)
+	+sm
+		font-size: 20px
+.title-md,
+h3
 	+fmt
-	+f(20px, 700, 1.4)
-.title-sm
+	+f(22px, 700, 1.4)
+.title-sm,
+h4
 	+fmt
-	+f(16px, 600, 1.375)
-.title-xs
+	+f(20px, 600, 1.375)
+	+sm
+		font-size: 14px
+.title-xs,
+h5
 	+fmt
 	+f(14px, 600, 1.58)
 
 .color-white
 	color: $white
+.color-brown
+	color: #ba9d5d
+
+.description
+	+fos
+	+f(13px,700,1.5)
+	color: #CFCFD9
+	text-transform: uppercase

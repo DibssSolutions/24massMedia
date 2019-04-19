@@ -2,13 +2,24 @@
 	padding: 56px 0 72px
 	border-bottom: 8px solid #FFEEC3
 	background-color: #F6F8F9
+	+md
+		padding: 64px 0 69px
+	+sm
+		padding: 41px 0 46px
+		border-bottom: none
 	&__head
 		margin-bottom: 56px
+		+md
+			margin-bottom: 42px
+		+sm
+			margin-bottom: 21px
 .celebrities-slider
 	position: relative
 	margin-right: -40px
 	white-space: nowrap
 	+fadeout(.8s)
+	+md
+		margin: 0 auto
 	&.slick-initialized
 		+fadein
 	.slick-list
@@ -17,9 +28,13 @@
 	&__slide
 		padding-right: 40px
 		opacity: .2
+		max-width: 400px
 		transition: .5s
 		vertical-align: top
 		display: inline-block
+		+sm
+			padding-right: 20px
+			max-width: 240px
 		.slick-active &
 			opacity: 1
 .celebrity
@@ -39,8 +54,27 @@
 		background-position: center
 		background-size: cover
 		background-repeat: no-repeat
+		+sm
+			+circle(80)
+		.celebrity_sm &
+			+circle(64)
 	&__content
 		padding-left: 30px
+		+md
+			padding-left: 28px
+		+sm
+			padding-left: 10px
+		.celebrity_sm &
+			padding-left: 24px
 	&__title
 		margin-bottom: 4px
 		transition: color .3s
+		+f(16px,600,1.25)
+	&__profession
+		+f(14px,400,1.42)
+	&__text
+		height: 60px
+		+md
+			height: 80px
+		+sm
+			height: 40px

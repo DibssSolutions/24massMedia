@@ -1,0 +1,138 @@
+.article,
+article
+	+fos
+	+f(18px,400,1.78)
+	+md
+		+f(16px,400,1.75)
+	+sm
+		+f(14px,400,1.71)
+	p
+		&:not(:last-child)
+			margin-bottom: 24px
+			+sm
+				margin-bottom: 20px
+	h1
+		+sm
+			font-size: 20px
+	h1,
+	h2
+		&:not(:first-child)
+			margin-top: 56px
+			+md
+				margin-top: 43px
+			+sm
+				margin-top: 21px
+		&:not(:last-child)
+			margin-bottom: 45px
+			+md
+				margin-bottom: 32px
+			+sm
+				margin-bottom: 16px
+	h3
+		&:not(:first-child)
+			margin-top: 48px
+		&:not(:last-child)
+			margin-bottom: 32px
+	h2
+		font-size: 24px
+		+md
+			font-size: 20px
+	h4,
+	h5
+		&:not(:first-child)
+			margin-top: 28px
+		&:not(:last-child)
+			margin-bottom: 24px
+	a
+		font-weight: 600
+		border-bottom: 1px solid #CFCFD9
+		+hover
+			border-color: transparent
+		&:not([class*="btn"])
+			color: currentColor
+			transition: border-color .3s
+
+.article-footer
+	margin-top: 67px
+	+md
+		margin-top: 42px
+	+sm
+		margin-top: 35px
+	&__line
+		height: 4px
+		background-color: #F6F8F9
+	&__field
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+		display: flex
+		+sm
+			flex-direction: column
+		&:not(:first-child)
+			margin-top: 72px
+			+md
+				margin-top: 48px
+			+sm
+				margin-top: 40px
+		&:not(:last-child)
+			margin-bottom: 72px
+			+md
+				margin-bottom: 48px
+			+sm
+				margin-bottom: 40px
+	&__soc
+		width: 50%
+		max-width: 368px
+		padding-right: 10px
+		width: 100%
+		max-width: 100%
+	&__copy
+		text-align: right
+		max-width: 320px
+		width: 50%
+		width: 100%
+		max-width: 100%
+		+sm
+			order: -1
+			margin-bottom: 28px
+	&__facts
+		&:not(:first-child)
+			margin-top: 64px
+	&__wind
+		&:not(:first-child)
+			margin-top: 48px
+		&:not(:last-child)
+			margin-bottom: 48px
+.article-topic
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 12
+	border-bottom: 1px solid #E2E6E8
+	+fadeout(.3s)
+	pointer-events: none
+	+md
+		display: none
+	&.is-show
+		+fadein
+	&__inner
+		padding-left: 186px
+		+md
+			padding-left: 88px
+	&__text
+		position: relative
+		padding: 26px 0 27px 37px
+		+f(20px,600,1.4)
+		+text-overflow
+		pointer-events: initial
+		background-color: $white
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: 0
+			margin-top: -16px
+			width: 1px
+			height: 32px
+			background-color: #F2F2F2

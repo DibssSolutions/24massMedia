@@ -1,0 +1,40 @@
+.pagination
+	display: flex
+	font-size: 16px
+	justify-content: space-between
+	text-align: center
+	align-items: center
+	.pagination__prev,
+	.pagination__next
+		+fos
+		line-height: 50px
+	&__list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+	li
+		min-width: 56px
+		&:not(:first-child)
+			margin-left: 8px
+	a
+		height: 56px
+		min-width: 56px
+		color: $black
+		line-height: 54px
+		border: 1px solid #CFCFD9
+		border-radius: 4px
+		transition: color .3s, background-color .3s, border-color .3s
+		display: block
+		+hover
+			color: $white
+			border-color: $red
+			background-color: $red
+		&.is-active
+			color: $white
+			border-color: $red
+			background-color: $red
+		.icon
+			line-height: 1
+			font-size: 9px
+			vertical-align: middle

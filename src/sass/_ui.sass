@@ -39,11 +39,15 @@
 		background-color: #D09C17
 		+hover
 			background-color: lighten(#D09C17, 7%)
-		
+	&_red
+		background-color: #F15145
+		+hover
+			background-color: lighten(#F15145, 7%)
+
 .date
 	+f(11px,700,1.45)
 	+fos
-	letter-spacing: -0.05em
+	letter-spacing: 0.03em
 	opacity: .4
 	text-transform: uppercase
 	&_light
@@ -54,7 +58,7 @@
 
 .link
 	position: relative
-	margin: 0 -20px
+	margin: 0 -10px
 	padding: 0 45px
 	+fmt
 	+f(16px,700,1.375)
@@ -62,6 +66,9 @@
 	transition: padding-right .4s
 	vertical-align: top
 	display: inline-block
+	+md
+		padding-right: 0
+		margin: 0
 	&:before
 		position: absolute
 		top: 50%
@@ -84,17 +91,23 @@
 		transition: transform .4s, right .4s, opacity .4s
 		background-color: $red
 	+hover
-		// padding-right: 45px
-		// padding-left: 0
 		&:before
 			right: 48px
+			+md
+				right: 100%
 		&:after
 			right: 45px
 			transform: scaleX(0)
 			opacity: 0
+			+md
+				right: 100%
+				opacity: 1
+				transform: none
 		.link__icon
 			transform: translateX(0) scale(1)
 			transition-delay: .3s
+			+md
+				transform: translateX(-12px) scale(0)
 	&:active
 		&:before
 			background-color: rgba($red, .2)
@@ -126,3 +139,266 @@
 		transform: translateX(0) scale(1)
 	to
 		transform: translateX(16px) scale(0)
+
+.progress 
+	background-image: linear-gradient(to right, #F15145 var(--scroll), transparent 0)
+	background-repeat: no-repeat
+	position: fixed
+	width: 100%
+	height: 4px
+	z-index: 10
+	transition: background-color .3s
+	&.is-active
+		background-color: #E2E6E8
+
+.info
+	padding: 32px 40px
+	+f(14px,400,1.7)
+	background-color: #F6F8F9
+
+
+.prestory
+	position: relative
+	padding: 29px 32px 28px 81px
+	border: 4px solid #F6F8F9
+	+f(14px,400,1.7)
+	color: currentColor
+	display: block
+	+sm
+		padding: 17px 17px 23px 52px
+		+f(13px,400,1.7)
+	+hover
+		.prestory__theme
+			color: $red
+	&__icon
+		position: absolute
+		top: 50%
+		left: 36px
+		margin-top: -6px
+		font-size: 0
+		+sm
+			top: 20px
+			left: 18px
+			margin-top: 0
+		.icon
+			font-size: 12px
+			color: $red
+	&__text
+		margin-right: 7px
+		color: #A9A9B2
+	&__theme
+		font-weight: 700
+		transition: color .3s
+		+sm
+			margin-top: 5px
+			margin-left: -32px
+			font-size: 14px
+			line-height: 1.4
+			display: block
+
+.copycontrol
+	position: relative
+	max-width: 360px
+	width: 100%
+	vertical-align: top
+	display: inline-block
+	.input input
+		color: $gray
+	&__btn
+		position: absolute
+		top: 1px
+		right: 1px
+		width: 48px
+		height: 46px
+		line-height: 46px
+		text-align: center
+		color: #F15145
+		font-size: 0
+		border-radius: 0 4px 4px 0
+		background-color: $white
+		+hover
+			.icon-copy__top,
+			.icon-copy__bottom
+				background-color: $red
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			right: 48px
+			width: 48px
+			height: 46px
+			background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
+		.icon-copy
+			vertical-align: middle
+.icon-copy
+	position: relative
+	width: 18px
+	height: 18px
+	display: inline-block
+	&__top,
+	&__bottom
+		position: absolute
+		width: 12px
+		height: 12px
+		border-radius: 1px
+		border: 1px solid #F15145
+		transition: background-color .3s
+	&__top
+		top: 0
+		right: 0
+	&__bottom
+		left: 0
+		bottom: 0
+		z-index: 1
+		box-shadow: 0 0 0 2px $white
+		background-color: $white
+
+.likes
+	align-items: center
+	display: flex
+.like
+	color: $lightGray
+	transition: color .3s
+	+hover
+		color: #03A536
+	&:not(:first-child)
+		margin-left: 10px
+	&_dis
+		+rotate(180)
+		+hover
+			color: $red
+	.icon
+		font-size: 17px
+
+.comment-icon
+	position: relative
+	padding: 2px 4px
+	line-height: 1
+	+fos
+	+f(10px,700,1)
+	color: $black
+	border-radius: 3px
+	background-color: $lightGray
+	transition: background-color .3s
+	+hover
+		background-color: darken($lightGray, 10%)
+	&:before
+		position: absolute
+		content: ''
+		top: 100%
+		left: 50%
+		transform: translateX(-50%)
+		+arr(5,3,$lightGray,b)
+
+.birthdays
+	&__date
+		margin-bottom: 12px
+		+fmt
+		+f(24px, 700, 1.33)
+	&__description
+		+fos
+		+f(13px,700,1.54)
+		color: #CFCFD9
+		text-transform: uppercase
+
+.img
+	position: relative
+	color: $white
+	&:not(:first-child)
+		.article &,
+		article &
+			margin-top: 56px
+	&:not(:last-child)
+		.article &,
+		article &
+			margin-bottom: 56px
+	img
+		max-width: 100%
+		display: block
+	&__footer
+		position: absolute
+		padding: 72px 20px 24px
+		left: 0
+		bottom: 0
+		width: 100%
+		+fos
+		+f(14px,400,1.42)
+		background: linear-gradient(180deg, rgba(42, 42, 44, 0) 0%, rgba(#2A2A2C, .8) 100%)
+
+.images
+	margin: 0 -2px
+	flex-wrap: wrap
+	display: flex
+	&:not(:first-child)
+		.article &,
+		article &
+			margin-top: 56px
+	&:not(:last-child)
+		.article &,
+		article &
+			margin-bottom: 56px
+	&__col
+		padding: 0 2px
+		width: 50%
+	.img
+		.article &,
+		article &
+			margin: 0
+
+.facts
+	padding: 32px 36px
+	+fos
+	+f(16px,400,2)
+	background: linear-gradient(0deg, #F6F8F9, #F6F8F9)
+	&__title
+		margin-bottom: 28px
+	&__item
+		display: block
+		&:before
+			content: '— '
+		&:not(:first-child)
+			margin-top: 20px
+
+.sign
+	align-items: center
+	color: $black
+	+f(14px,400,1.4)
+	display: inline-flex
+	+hover
+		.sign__text
+			border-color: transparent
+	&__icon
+		margin-right: 12px
+		color: #CFCFD9
+		font-size: 12px
+		line-height: 1
+	&__text
+		font-weight: 600
+		color: currentColor
+		transition: border-color .3s
+		border-bottom: 1px solid #CFCFD9
+		display: inline
+
+.nav-list
+	+fos
+	+f(14px,600,1.4)
+	li
+		position: relative
+		padding-left: 20px
+		display: block
+		&:not(:first-child)
+			margin-top: 22px
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: 0
+			+circle(3)
+			margin-top: -1px
+			background-color: #CFCFD9
+	a
+		color: currentColor
+		transition: border-color .3s
+		border-bottom: 1px dashed #CFCFD9
+		+hover
+			border-color: transparent

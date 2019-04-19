@@ -13,10 +13,14 @@
 				color: $red
 	&__img
 		position: relative
-		padding-bottom: 62%
+		height: 248px
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center
+		+md
+			height: 216px
+		+sm
+			height: 176px
 	&__badges
 		position: absolute
 		top: 0
@@ -25,8 +29,14 @@
 		pointer-events: none
 		z-index: 2
 		padding: 20px 20px 20px 24px
+		+sm
+			padding: 8px 8px 8px 13px
 	&__date
 		margin-top: 18px
+		+md
+			margin-top: 14px
+		+sm
+			margin-top: 10px
 	&__badge
 		margin: 4px 4px 0 0
 		pointer-events: initial
@@ -37,16 +47,38 @@
 		transition: color .3s
 		+f(20px,600,1.4)
 		display: block
-
+		+md
+			margin-top: 8px
+		+sm
+			margin-top: 5px
+			max-height: none
+			+f(16px,600,1.5)
+		br
+			+sm
+				display: none
 .card-lg
 	position: relative
 	min-width: 100%
 	color: $white
-	padding-bottom: 63.49%
+	height: 533px
+	+md
+		margin: 0
+		height: 450px
+	+sm
+		color: $black
+		height: auto
 	&_ml
 		margin-left: -40px
+	&_mt
+		margin-top: -40px
+	&_mr
+		margin-right: -40px
+	&_mb
+		margin-bottom: -40px
 	&_middle
-		padding-bottom: 44.7%
+		height: 376px
+		+md
+			height: 328px
 	&_black
 		color: $black
 	&__img
@@ -58,14 +90,28 @@
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center
+		+sm
+			position: relative
+			margin-bottom: 10px
+			height: 176px
 		&_top
 			top: -16px
+			background-position: bottom right
+			+sm
+				top: 0
 		&_right
 			right: -16px
+			background-position: bottom right
+			+sm
+				right: 0
 		&_left
 			left: -16px
+			+sm
+				left: 0
 		&_bottom
 			right: -16px
+			+sm
+				right: 0
 	&__wrap
 		position: absolute
 		top: 0
@@ -73,8 +119,17 @@
 		width: 100%
 		height: 100%
 		padding: 108px 40px 40px
+		+md
+			padding: 85px 39px 39px
+		+sm
+			position: static
+			padding: 0
 		.card-lg_middle &
 			padding: 27px 40px 40px
+			+md
+				padding: 49px 39px 39px
+			+sm
+				padding: 0
 	&__link
 		position: absolute
 		top: 0
@@ -92,14 +147,29 @@
 		flex-wrap: wrap
 		align-items: center
 		display: flex
+		+sm
+			position: static
 		&:not(:last-child)
 			margin-bottom: 40px
+			+sm
+				margin-bottom: 0
 		& > *
 			pointer-events: initial
 		.card-lg_middle &
 			margin-bottom: 64px
+			+md
+				margin-bottom: 36px
 	&__badge
-		margin: 4px 30px 0 0
+		+sm
+			position: absolute
+			top: 8px
+			left: 12px
+		&.badge,
+		.badge
+			margin: 4px 30px 0 0
+	&__date
+		+sm
+			margin-bottom: 4px
 	&__title
 		max-width: 400px
 		max-height: 220px
@@ -107,6 +177,16 @@
 		+f(32px,700,1.375)
 		color: currentColor
 		transition: color .3s
+		+md
+			font-size: 28px
+			line-height: 1.4
+			max-height: 213px
+		+sm
+			max-height: none
+			+f(16px,600,1.5)
+		br
+			+sm
+				display: none
 
 .card-sm
 	position: relative
@@ -115,12 +195,21 @@
 		margin-bottom: 24px
 		padding-bottom: 24px
 		border-bottom: 1px solid #F2F2F2
+		+md
+			margin-bottom: 21px
+			padding-bottom: 21px
+		+sm
+			margin-bottom: 17px
+			padding-bottom: 17px
 	&__link
 		position: absolute
 		top: 0
 		left: 0
-		bottom: 25px
+		top: 0
+		bottom: 0
 		width: 100%
+		+sm
+			top: 0
 		+hover
 			& ~ .card-sm__wrap .card-sm__title
 				color: $red
@@ -131,8 +220,17 @@
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center
+		+md
+			width: 88px
+			height: 80px
+		+sm
+			display: none
 		& + .card-sm__wrap
-			padding-left: 24px			
+			padding-left: 24px	
+			+md
+				padding-left: 20px	
+			+sm
+				padding-left: 0	
 	&__wrap
 		flex-grow: 1
 	&__title
@@ -140,6 +238,9 @@
 		overflow: hidden
 		transition: color .3s
 		+f(16px,600,1.375)
+		+md
+			font-size: 14px
+			line-height: 1.45
 	&__footer
 		position: relative
 		align-items: center
@@ -147,8 +248,16 @@
 		display: flex
 	&__badge
 		margin: 5px 16px 0 0
+		+md
+			margin-top: 8px
+		+sm
+			margin-top: 9px
 	&__date
 		margin-top: 5px
+		+md
+			margin-top: 8px
+		+sm
+			margin-top: 9px
 
 .card-simple
 	&__top
@@ -156,6 +265,9 @@
 		flex-wrap: wrap
 		display: flex
 		margin-bottom: 40px
+		+md
+			margin-top: -5px
+			margin-bottom: 30px
 	&__badge
 		margin: 5px 16px 0 0
 	&__date
@@ -167,5 +279,65 @@
 		color: currentColor
 		transition: color .3s
 		display: block
+		+md
+			padding-right: 10px
+			font-size: 22px
+			line-height: 1.55
 		+hover
 			color: $red
+
+.cardtable
+	display: flex
+	+f(14px,400,1.7)
+	&:not(:last-child)
+		margin-bottom: 56px
+	&__img
+		display: flex
+		align-items: flex-end
+		width: 290px
+		height: 360px
+		flex-shrink: 0
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		&:not(:last-child)
+			margin-right: 40px
+		&_ml
+			margin-left: -40px
+	&__btn
+		padding: 16px
+		width: 100%	
+	&__wrap
+		flex-grow: 1
+	&__field
+		display: flex
+		&:not(:last-child)
+			margin-bottom: 20px
+	&__left
+		padding-right: 20px
+		+fos
+		flex-shrink: 0
+		width: 190px
+		color: #A9A9B2
+	&__right
+		flex-grow: 1
+	&__date
+		&:not(:last-child)
+			margin-right: 38px
+	a
+		+hover
+			border-color: transparent
+		&:not([class])
+			+fos
+			+f(14px,600,1.7)
+			border-bottom: 1px solid #CFCFD9
+			color: currentColor
+			transition: border-color .3s
+
+.card-def
+	&__ing
+		img
+			max-width: 100%
+			display: block
+	&__footer
+		margin-top: 16px

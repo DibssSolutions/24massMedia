@@ -1,0 +1,166 @@
+.persons
+	&__head
+		margin-bottom: 32px
+	&__row
+		margin-bottom: -36px
+	&__col
+		margin-bottom: 36px
+	&__footer
+		margin-top: 56px
+	&__birthdays
+		margin-bottom: 40px
+	&__menu
+		margin-bottom: 48px
+	&__filter
+		margin: 48px 0 32px
+.person
+	color: $black
+	+hover
+		.person__name
+			color: $red
+	&__img
+		margin-bottom: 16px
+		height: 324px
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		display: block
+	&__profession
+		+fos
+		+f(11px,700,1.64)
+		color: #CFCFD9
+		text-transform: uppercase
+		display: block
+	&__name
+		margin-top: 12px
+		+f(18px,600,1.4)
+		display: block
+		transition: color .3s ease-in-out
+
+.menu
+	padding: 33px 40px 35px
+	display: flex
+	flex-wrap: wrap
+	+f(14px,600,1.43)
+	background-color: #F6F8F9
+	+md
+		display: block
+	&__item
+		position: relative
+		&:not(:first-child)
+			margin-left: 33px
+		+hover
+			.menu__link
+				color: $red
+			.menu__btn
+				color: $red
+			.menu__btn-points
+				background-color: $red
+				&:before,
+				&:after
+					background-color: $red
+			.menu__list
+				+fadein
+	&__link
+		position: relative
+		padding: 0 8px
+		transition: color .3s ease-in-out
+		color: currentColor
+		display: block
+		+hover
+			color: $red
+		&:before
+			position: absolute
+			content: ''
+			top: 100%
+			left: 0
+			right: 0
+			margin-top: 29px
+			z-index: 1
+			height: 1px
+			+fadeout(.3s)
+			background-color: $red
+		&:after
+			position: absolute
+			content: ''
+			top: -29px
+			left: 0
+			width: 100%
+			bottom: -29px
+			+md
+				display: none
+		&.is-active
+			color: $red
+	&__btn
+		position: relative
+		margin-left: 41px
+		padding-right: 37px
+		+fmt
+		color: currentColor
+		transition: color .3s ease-in-out
+		+f(14px,600,1.43)
+		background-color: transparent
+		+md
+			display: none
+		+hover
+			color: $red
+			.menu__btn-points
+				background-color: $red
+				&:before,
+				&:after
+					background-color: $red
+		&:after
+			position: absolute
+			content: ''
+			top: -29px
+			left: 0
+			width: 100%
+			bottom: -29px
+	&__btn-points
+		position: absolute
+		top: 50%
+		right: 0
+		margin-top: -2px
+		+circle(4)
+		display: block
+		transition: background-color .3s ease-in-out
+		background-color: #DEDEDE
+		transition-delay: .1s
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			+circle(4)
+			transition: background-color .3s ease-in-out
+			background-color: #DEDEDE
+		&:before
+			right: 8px
+			transition-delay: .05
+		&:after
+			right: 16px
+	&__list
+		position: absolute
+		top: 100%
+		left: -40px
+		margin-top: 19px
+		padding: 32px 40px
+		width: 410px
+		font-weight: 400
+		+fadeout(.3s)
+		border-radius: 4px
+		box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.16)
+		background-color: $white
+		.menu__item:last-child &
+			left: auto
+			right: -10px
+		li
+			display: block
+			&:not(:last-child)
+				margin-bottom: 20px
+		a
+			color: currentColor
+			transition: color .3s
+			display: block
+			+hover
+				color: $red

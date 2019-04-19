@@ -1,0 +1,387 @@
+---
+title: Category
+---
+{% extends 'layouts/_layout.html' %}
+
+{% block content %}
+	
+	{{ header.block({ active: 1 }) }}
+	<!-- begin news -->
+	<div class="news news_simple">
+		<div class="news__inner inner">
+			{{ mixins.breadcrumbs({
+				list: ['Главная', 'Шоу-бизнес']
+			}) }}
+			<!-- begin head -->
+			<div class="news__head head">
+				<div class="head__left">
+					<div class="head__title">
+						<h2 class="title">Шоу-бизнес</h2>
+					</div>
+				</div>
+			</div>
+			<div class="news__row row row-flex">
+				<div class="news__col col-8 col-md-12">
+					{{ mixins.cardLg({
+						class: 'card-lg_ml',
+						img: 'news-img-3.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 14:45',
+						title: 'Трейлер «Аквамена»: Джейсон Момоа нехотя возглавил подводное царство'
+					}) }}
+				</div>
+				<div class="news__col col-4 col-md-12 col-right">
+					<!-- begin wind -->
+					<div class="wind wind_mt wind_mr">
+						<div class="wind__row row-flex">
+						{% for item in [
+							{
+								img: 'card-sm-1.jpg',
+								title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+								badgeContent: 'Шоу-бизнес',
+								date: '17.01 в 10:59'
+							},
+							{
+								img: 'card-sm-2.jpg',
+								title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+								badgeContent: 'Общество',
+								date: '17.01 в 09:20'
+							},
+							{
+								img: 'card-sm-3.jpg',
+								title: 'Суд не нашел плагиат <br>в песне «Чика» Александра Реввы',
+								badgeContent: 'Факты',
+								date: '17.01 в 09:02'
+							},
+							{
+								img: 'card-sm-4.jpg',
+								title: 'В Apple объявили о планах в ближайшее время снизить цены на iPhone',
+								badgeContent: 'Экономика',
+								date: '16.01  в 17:02'
+							}
+						] %}
+							<div class="wind__col-sm col col-md-6 col-sm-12">
+							    {{ mixins.cardSm({
+									img: item.img,
+									title: item.title,
+									badgeContent: item.badgeContent,
+									date: item.date
+							    }) }}
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+					<!-- end wind -->
+				</div>
+				{% for item in [
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeColor: 'green',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-3.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+					}
+				] %}
+				<div class="news__col col-4 col-md-6 col-sm-12">
+					{{ mixins.card({
+						img: item.img,
+						badgeColor: item.badgeColor,
+						badgeContent: item.badgeContent,
+						date: item.date,
+						title: item.title
+					}) }}  
+				</div>
+				{% endfor %}
+				<div class="news__col col-8 col-md-12">
+					{{ mixins.cardLg({
+						class: 'card-lg_middle',
+						classImg: 'card-lg__img_top',
+						img: 'news-img-4.png',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 14:45',
+						title: 'Шьямалан о связи триллера «Стекло» <br>с «Неуязвимым» <br>и «Сплитом»'
+					}) }}
+				</div>
+				<div class="news__col news__col_wind col">
+					<!-- begin wind -->
+					<div class="wind wind_simple wind_mr wind_ml">
+						<div class="news__row row">
+							<div class="news__col col-4 col-md-6 mobile-hide">
+								{{ mixins.cardSimple({
+									badgeContent: 'Шоу-бизнес',
+									date: '16 января в 20:51',
+									title: 'This is America стала песней года по версии 61-я церемонии награждения «Грэмми»'
+								}) }}
+							</div>
+							<div class="news__col col-8 col-md-6 col-sm-12">
+								<div class="news__row row">
+									{% for i in range(0,2) %}
+									<div class="news__col col-6 col-md-12{% if loop.last %} tablet-hide{% endif %}">
+									    {% for item in [
+									    	{
+									    		img: 'card-sm-1.jpg',
+									    		title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+									    		badgeContent: 'Шоу-бизнес',
+									    		date: '17.01 в 10:59'
+									    	},
+									    	{
+									    		img: 'card-sm-2.jpg',
+									    		title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+									    		badgeContent: 'Общество',
+									    		date: '17.01 в 09:20'
+									    	}
+									    ] %}
+								        {{ mixins.cardSm({
+								    		img: item.img,
+								    		title: item.title,
+								    		badgeContent: item.badgeContent,
+								    		date: item.date
+								    	}) }}
+									    {% endfor %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end wind -->
+				</div>
+				<div class="news__col col-8 col-md-12">
+					{{ mixins.cardLg({
+						class: 'card-lg_middle card-lg_black',
+						classImg: 'card-lg__img_top',
+						img: 'news-img-5.png',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 14:45',
+						title: 'Шьямалан о связи триллера «Стекло» <br>с «Неуязвимым» <br>и «Сплитом»'
+					}) }}
+				</div>
+				{% for item in [
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeColor: 'green',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-3.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+					},
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'green',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					}
+				] %}
+				<div class="news__col col-4 col-md-6 col-sm-12">
+					{{ mixins.card({
+						img: item.img,
+						badgeColor: item.badgeColor,
+						badgeContent: item.badgeContent,
+						date: item.date,
+						title: item.title
+					}) }}  
+				</div>
+				{% endfor %}
+				<div class="news__col col-md-6 col-sm-12 tablet-show">
+					<div class="wind wind_sm">
+					    {% for item in [
+					    	{
+					    		title: 'Лоза рассказал о своем отношении к группе The Beatles',
+					    		badgeContent: 'Шоу-бизнес',
+					    		date: '17.01 в 10:59'
+					    	},
+					    	{
+					    		title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+					    		badgeContent: 'Общество',
+					    		date: '17.01 в 09:20'
+					    	},
+					    	{
+					    		title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+					    		badgeContent: 'Общество',
+					    		date: '17.01 в 09:20'
+					    	}
+					    ] %}
+				        {{ mixins.cardSm({
+				    		title: item.title,
+				    		badgeContent: item.badgeContent,
+				    		date: item.date
+				    	}) }}
+				    	{% endfor %}
+					</div>
+				</div>
+				<div class="news__col col-8 col-md-12">
+					{{ mixins.cardLg({
+						class: 'card-lg_middle',
+						classImg: 'card-lg__img_right',
+						img: 'news-img-6.png',
+						badgeColor: 'yellow',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 14:45',
+						title: 'Шьямалан о связи триллера «Стекло» <br>с «Неуязвимым» <br>и «Сплитом»'
+					}) }}
+				</div>
+
+				<div class="news__col col-4 tablet-hide">
+					<div class="wind wind_sm">
+					    {% for item in [
+					    	{
+					    		title: 'Лоза рассказал о своем отношении к группе The Beatles',
+					    		badgeContent: 'Шоу-бизнес',
+					    		date: '17.01 в 10:59'
+					    	},
+					    	{
+					    		title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+					    		badgeContent: 'Общество',
+					    		date: '17.01 в 09:20'
+					    	},
+					    	{
+					    		title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+					    		badgeContent: 'Общество',
+					    		date: '17.01 в 09:20'
+					    	}
+					    ] %}
+				        {{ mixins.cardSm({
+				    		title: item.title,
+				    		badgeContent: item.badgeContent,
+				    		date: item.date
+				    	}) }}
+				    	{% endfor %}
+					</div>
+				</div>
+				{% for item in [
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeColor: 'green',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					}
+				] %}
+				<div class="news__col col-4 col-md-6 col-sm-12">
+					{{ mixins.card({
+						img: item.img,
+						badgeColor: item.badgeColor,
+						badgeContent: item.badgeContent,
+						date: item.date,
+						title: item.title
+					}) }}  
+				</div>
+				{% endfor %}
+				<div class="news__col col-8 col-md-12">
+					{{ mixins.cardLg({
+						class: 'card-lg_middle',
+						img: 'news-img-7.jpg',
+						badgeColor: 'yellow',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 14:45',
+						title: 'Шьямалан о связи триллера «Стекло» <br>с «Неуязвимым» <br>и «Сплитом»'
+					}) }}
+				</div>
+				<div class="news__col col-4 col-md-6 tablet-hide">
+					{{ mixins.card({
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					}) }}  
+				</div>
+				<div class="news__col col">
+					<!-- begin wind -->
+					<div class="wind wind_simple wind_mr wind_ml">
+						<div class="news__row row">
+							<div class="news__col col-4 col-md-6 mobile-hide">
+								{{ mixins.cardSimple({
+									badgeContent: 'Шоу-бизнес',
+									date: '16 января в 20:51',
+									title: 'This is America стала песней года по версии 61-я церемонии награждения «Грэмми»'
+								}) }}
+							</div>
+							<div class="news__col col-8 col-md-6 col-sm-12">
+								<div class="news__row row">
+									{% for i in range(0,2) %}
+									<div class="news__col col-6 col-md-12{% if loop.last %} tablet-hide{% endif %}">
+									    {% for item in [
+									    	{
+									    		img: 'card-sm-1.jpg',
+									    		title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+									    		badgeContent: 'Шоу-бизнес',
+									    		date: '17.01 в 10:59'
+									    	},
+									    	{
+									    		img: 'card-sm-2.jpg',
+									    		title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+									    		badgeContent: 'Общество',
+									    		date: '17.01 в 09:20'
+									    	}
+									    ] %}
+								        {{ mixins.cardSm({
+								    		img: item.img,
+								    		title: item.title,
+								    		badgeContent: item.badgeContent,
+								    		date: item.date
+								    	}) }}
+									    {% endfor %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end wind -->
+				</div>
+			</div>
+			<div class="news__footer">
+				<button class="btn btn_full" type="button">Еще новости</button>
+			</div>
+		</div>
+	</div>
+	<!-- end news -->
+	{% include 'partials/_footer.html' %}
+
+{% endblock %}

@@ -1,8 +1,11 @@
 body
-	min-width: 1199px
+	position: relative
 	+fmt
 	+f(16px, 400, 2)
+	min-width: 320px
 	color: $black
 	+smooth-font
 	background: $white
-
+	&.is-open-menu
+		+md
+			overflow: hidden

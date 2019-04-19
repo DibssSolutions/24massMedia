@@ -1,21 +1,43 @@
 .news
 	padding-top: 86px
+	+md
+		padding-top: 65px
+	+sm
+		padding-top: 38px
+	&_simple
+		padding-top: 0
+		+md
+			padding-top: 0
+		+sm
+			padding-top: 0
 	&__topic
-		display: flex
+		padding-bottom: 49px
+	&__head
+		width: 66.6%
+		+md
+			width: 100%
 		&:not(:last-child)
-			margin-bottom: 50px
-	&__left
-		padding-right: 40px
-		flex: 1 1 auto
-	&__right
-		flex-shrink: 0
-		width: 400px
+			margin-bottom: 46px
+			+md
+				margin-bottom: 31px
 	&__row
 		margin-bottom: -40px
+		+md
+			margin-bottom: -30px
 	&__col
 		margin-bottom: 40px
+		+md
+			margin-bottom: 30px
+		+sm
+			margin-bottom: 21px
+		&_wind 
+			margin-bottom: 55px
 	&__footer
 		margin-top: 64px
+		+md
+			margin-top: 47px
+		+sm
+			margin-top: 40px
 
 .text-news-wrap
 	counter-reset: list
@@ -36,7 +58,7 @@
 		content: counter(list)
 		top: 0
 		right: 0
-		+fgpb
+		+fgp
 		+f(72px,700,1)
 		opacity: .08
 	&__title

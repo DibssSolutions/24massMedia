@@ -1,0 +1,31 @@
+.subscription
+	align-items: center
+	display: flex
+	&__control
+		flex: 1 1 auto
+		margin-right: -4px
+		input
+			padding: 5px 20px
+			height: 48px
+			width: 100%
+			+fgp
+			color: $black
+			caret-color: $red
+			+f(14px,400,1.24)
+			border: 1px solid $lightGray
+			border-radius: 4px 0 0 4px
+			border-right: none
+			background-color: transparent
+			display: inline-block
+			&::placeholder
+				color: $gray
+	&__submit
+		flex: 0 0 auto
+		+sm
+			padding: 13px
+			min-width: 0
+			font-size: 0
+		.icon
+			font-size: 0
+			+sm
+				font-size: 22px

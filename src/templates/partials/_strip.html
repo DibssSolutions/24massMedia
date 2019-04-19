@@ -1,0 +1,38 @@
+<!-- begin strip -->
+<div class="strip">
+	<div class="strip__inner inner">
+		<div class="strip__head">
+			<div class="strip__logo" style="background-image: url(./img/sc-logo.png);"></div>
+			<div class="strip__wrap">
+				<h3 class="strip__title title-lg">Яндекс.Дзен</h3>
+				<div class="strip__description">“Больше интересного в вашей ленте ...”</div>
+			</div>
+		</div>
+		<div class="strip__row row-flex js-strip-slider">
+			{% for item in range(0,4) %}
+			    <div class="strip__col">
+			    	<div class="strip-item" style="background-image: url(https://placeimg.com/282/288/people);">
+			    		<a href="#" class="strip-item__link"></a>
+			    		<div class="strip-item__wrap">
+			    			<div class="strip-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet</div>
+			    			<div class="strip-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati eius, eaque</div>
+			    		</div>
+			    		<div class="strip-item__footer">
+			    			<div class="strip-item__name">
+			    				companyName
+			    			</div>
+			    			<div class="strip-item__feedback">
+			    				<a href="#" class="comment-icon">90</a>
+			    				<div class="likes">
+			    					<a href="#" class="like">{{ mixins.icon('thumb-up') }}</a>
+			    					<a href="#" class="like like_dis">{{ mixins.icon('thumb-up') }}</a>
+			    				</div>
+			    			</div>
+			    		</div>
+			    	</div>
+			    </div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end strip -->

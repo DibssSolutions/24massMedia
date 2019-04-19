@@ -1,7 +1,13 @@
+{% import "partials/_mixins.html" as mixins %}
 {% macro block(props) %}
 <!-- begin header -->
-<header class="header">
+<header class="header js-header">
 	<div class="header__inner inner">
+		<button class="btn-nav js-btn-nav" type="button">
+			<span class="btn-nav__line"></span>
+			<span class="btn-nav__line"></span>
+			<span class="btn-nav__line"></span>
+		</button>
 		<!-- begin logo -->
 		<a href="/" class="logo">
 			<h1 class="logo__hide">24сми</h1>
@@ -9,7 +15,15 @@
 		</a>
 		<!-- end logo -->
 		<!-- begin nav -->
-		<div class="nav">
+		<div class="nav js-nav">
+			<div class="nav__novelty">
+				<!-- begin novelty -->
+				<a href="#" class="novelty">
+					<span class="novelty__logo"><img src="./img/novelty-logo.png" alt="novelty"></span>
+					<span class="novelty__text">Знаменитости</span>
+				</a>
+				<!-- end novelty -->
+			</div>
 			<ul class="nav__list">
 				{% for text in ['Шоу-бизнес', 'Общество', 'Наука', 'Факты'] %}
 				<li class="nav__item">
@@ -97,12 +111,25 @@
 					</div>
 				</div>
 			</div>
+			<!-- begin soc -->
+			<div class="nav__soc soc">
+				<ul class="soc__list">
+					{% for i in ['vk', 'tel', 'tw', 'youtube', 'inst'] %}
+					    <li class="soc__item">
+					    	<a href="#">
+						    	{{ mixins.icon(i) }}
+						    </a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<!-- end soc -->
 		</div>
 		<!-- end nav -->
 		<!-- begin novelty -->
-		<a href="#" class="novelty">
+		<a href="#" class="novelty{% if props.noveltyActive %} is-active{% endif %}">
 			<span class="novelty__logo"><img src="./img/novelty-logo.png" alt="novelty"></span>
-			<span class="novelty__text">Знаменитости</span>
+			<span class="novelty__text tablet-hide">Знаменитости</span>
 		</a>
 		<!-- end novelty -->
 	</div>

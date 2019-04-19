@@ -1,0 +1,276 @@
+---
+title: photo-page
+---
+{% extends 'layouts/_layout.html' %}
+
+{% block content %}
+	
+	{{ header.block({ noveltyActive: true }) }}
+	<!-- begin card -->
+	<div class="photo-page">
+		<div class="photo-page__inner inner">
+			{{ mixins.breadcrumbs({
+				list: ['Главная', 'Знаменитости', 'Брэдли Купер']
+			}) }}
+			<div class="photo-page__row row-flex">
+				<div class="photo-page__col main col-8">
+					<!-- begin head -->
+					<div class="head">
+						<div class="head__inner">
+							<h2 class="head__title title-lg">Фото</h2>
+							<div class="head__filter filter">
+								<div class="filter__left">
+									<div class="description">Bradley Cooper</div>
+								</div>
+								<div class="filter__right">
+									<div class="text-control">
+										<div class="text-label">Показывать по:</div>
+										<select class="select js-select" data-width="100%" data-icon-arrow="arrow-bottom">
+										    <option value="12">12</option>
+										    <option value="1">1</option>
+										    <option value="2">2</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>				
+					</div>
+					<!-- end head -->
+					<!-- begin photos -->
+					<div class="photos">
+						<div class="photos__row">
+							{% for i in range(0,12) %}
+							<div class="photos__col">
+								<div class="photo"  style="background-image: url(./img/photo.jpg);"></div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<!-- end photos -->
+					<div class="photo-page__pagination pagination">
+						<a href="#" class="pagination__prev">{{ mixins.icon("sm-arrow-left") }}</a>
+						<ul class="pagination__list">
+							{% for item in [
+								{
+									text: 1
+								},
+								{
+									span: true,
+									text: '...'
+								},
+								{
+									text: 3
+								},
+								{
+									text: 4
+								},
+								{
+									active: true,
+									text: 5
+								},
+								{
+									text: 6
+								},
+								{
+									text: 7
+								},
+								{
+									span: true,
+									text: '...'
+								},
+								{
+									text: 14
+								}
+							] %}
+							{% if item.span %}
+								<li><span>{{ item.text }}</span></li>
+							{% else %}
+							    <li><a {% if item.active %}class="is-active"{% endif %} href="#">{{ item.text }}</a></li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+						<a href="#" class="pagination__next">{{ mixins.icon("sm-arrow-right") }}</a>
+					</div>
+				</div>
+				<div class="photo-page__col col-4">
+					<div class="sidebar">
+						<!-- end sm-banner -->
+						<div class="sidebar__wrap">
+							<!-- begin wind -->
+							<div class="sidebar__field wind">
+								<div class="head">
+									<div class="head__left">
+										<div class="head__title title-lg">Последние</div>
+										<div class="description">Брэдли Купер</div>
+									</div>
+								</div>
+								<div class="wind__row row-flex">
+								{% for item in [
+									{
+										img: 'card-sm-1.jpg',
+										title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+										badgeContent: 'Шоу-бизнес',
+										date: '17.01 в 10:59'
+									},
+									{
+										img: 'card-sm-2.jpg',
+										title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+										badgeContent: 'Общество',
+										date: '17.01 в 09:20'
+									},
+									{
+										img: 'card-sm-3.jpg',
+										title: 'Суд не нашел плагиат <br>в песне «Чика» Александра Реввы',
+										badgeContent: 'Факты',
+										date: '17.01 в 09:02'
+									},
+									{
+										img: 'card-sm-4.jpg',
+										title: 'В Apple объявили о планах в ближайшее время снизить цены на iPhone',
+										badgeContent: 'Экономика',
+										date: '16.01  в 17:02'
+									}
+								] %}
+									<div class="wind__col-sm col col-md-6 col-sm-12{% if loop.last %} tablet-hide{% endif %}{% if item.class %} {{ item.class }}{% endif %}">
+									    {{ mixins.cardSm({
+											img: item.img,
+											title: item.title,
+											badgeContent: item.badgeContent,
+											date: item.date
+									    }) }}
+									</div>
+								{% endfor %}
+								</div>
+							</div>
+							<!-- end wind -->
+							<!-- begin wind -->
+							<div class="wind">
+								<div class="wind__row row-flex">
+								{% for item in [
+									{
+										img: 'card-sm-1.jpg',
+										title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+										badgeContent: 'Шоу-бизнес',
+										date: '17.01 в 10:59'
+									},
+									{
+										img: 'card-sm-2.jpg',
+										title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+										badgeContent: 'Общество',
+										date: '17.01 в 09:20'
+									},
+									{
+										img: 'card-sm-3.jpg',
+										title: 'Суд не нашел плагиат <br>в песне «Чика» Александра Реввы',
+										badgeContent: 'Факты',
+										date: '17.01 в 09:02'
+									},
+									{
+										img: 'card-sm-4.jpg',
+										title: 'В Apple объявили о планах в ближайшее время снизить цены на iPhone',
+										badgeContent: 'Экономика',
+										date: '16.01  в 17:02'
+									}
+								] %}
+									<div class="wind__col-sm col col-md-6 col-sm-12{% if loop.last %} tablet-hide{% endif %}{% if item.class %} {{ item.class }}{% endif %}">
+									    {{ mixins.cardSm({
+											img: item.img,
+											title: item.title,
+											badgeContent: item.badgeContent,
+											date: item.date
+									    }) }}
+									</div>
+								{% endfor %}
+								</div>
+							</div>
+							<!-- end wind -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- begin yet -->
+	<div class="yet yet_bottom">
+		<div class="yet__inner inner">
+			<div class="yet__row row-flex">
+				<div class="news__col col-12">
+					<!-- begin banner -->
+					<div class="banner color-white">
+						<div class="banner__left">
+							<span class="banner__title">Персональное поздравление с 8 марта от Milka!</span>
+							<span class="banner__text">Milka – нежность лучший подарок</span>
+							<span class="banner__buttons">
+								<a href="#" class="banner__btn btn-simple">Создать поздравление</a>
+							</span>
+						</div>
+						<img src="./img/banner-left.jpg" alt="img">
+					</div>
+					<!-- end banner -->
+				</div>
+				<div class="news__col col-4 col-md-6 col-sm-12">
+					<!-- begin sm-banner -->
+					<a href="#" class="sm-banner" style="background-image: url(./img/banner-sm-1.jpg);">
+						<div class="sm-banner__inner">
+							<div class="sm-banner__badge">
+								<span class="badge badge_red">с 23 января по 28 февраля</span>
+							</div>
+							<div class="sm-banner__title">Рассрочка без переплат на 24 месяца</div>
+							<div class="sm-banner__text">на все телевизоры LG</div>
+						</div>
+					</a>
+					<!-- end sm-banner -->
+				</div>
+				{% for item in [
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+					},
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					},
+					{
+						img: 'news-img-2.jpg',
+						badgeContent: 'Шоу-бизнес',
+						date: '17 января в 15:55',
+						title: 'Шэрон Стоун снимется <br>в сериале-приквеле «Пролетая <br>над гнездом кукушки»'
+					},
+					{
+						img: 'news-img-1.jpg',
+						badgeColor: 'purple',
+						badgeContent: 'Общество',
+						date: '17 января в 16:54',
+						title: 'СМИ назвали Сергея Лазарева главным кандидатом на «Евровидение» от России'
+					}
+				] %}
+				<div class="news__col col-4 col-md-6 col-sm-12">
+					{{ mixins.card({
+						img: item.img,
+						badgeColor: item.badgeColor,
+						badgeContent: item.badgeContent,
+						date: item.date,
+						title: item.title
+					}) }}  
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- end yet -->
+	<!-- end card -->
+	{% include 'partials/_footer.html' %}
+
+{% endblock %}

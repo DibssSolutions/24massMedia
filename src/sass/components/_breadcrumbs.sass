@@ -1,0 +1,25 @@
+.breadcrumbs
+	padding: 16px 0 32px
+	align-items: center
+	+f(12px,400,1.67)
+	display: flex
+	flex-wrap: wrap
+	&__item
+		position: relative
+		vertical-align: top
+		display: inline-block
+		&:not(:last-child)
+			padding-right: 25px
+			&:before
+				position: absolute
+				content: ''
+				top: 50%
+				right: 10px
+				width: 5px
+				height: 1px
+				background-color: #CFCFD9
+		a
+			color: #CFCFD9
+			transition: color .3s
+			+hover
+				color: $red

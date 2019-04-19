@@ -7,12 +7,12 @@
 	font-weight: $weight
 
 $mainFamily: 'Montserrat'
-$gothamPro: 'GothamPro-Bold'
+$gothamPro: 'GothamPro'
 $OpenSans: 'OpenSans'
 
 =fmt
 	font-family: $mainFamily, Arial, sans-serif
-=fgpb
+=fgp
 	font-family: $gothamPro, Arial, sans-serif
 =fos
 	font-family: $OpenSans, Arial, sans-serif
@@ -84,6 +84,18 @@ $OpenSans: 'OpenSans'
 @font-face
 	+fontdefault(normal, 700, $gothamPro)
 	+fontpath('GothamPro Bold', 'GothamPro-Bold', GothamPro-Bold)
+@font-face
+	+fontdefault(normal, 500, $gothamPro)
+	+fontpath('GothamPro Medium', 'GothamPro-Medium', GothamPro-Medium)
+@font-face
+	+fontdefault(italic, 500, $gothamPro)
+	+fontpath('GothamPro MediumItalic', 'GothamPro-MediumItalic', GothamPro-MediumItalic)
+@font-face
+	+fontdefault(normal, 400, $gothamPro)
+	+fontpath('GothamPro', 'GothamPro', GothamPro)
+@font-face
+	+fontdefault(italic, 400, $gothamPro)
+	+fontpath('GothamPro Italic', 'GothamPro-Italic', GothamPro-Italic)
 
 // OPENSANS
 @font-face
@@ -91,7 +103,14 @@ $OpenSans: 'OpenSans'
 	+fontpath('OpenSans Bold', 'OpenSans-Bold', OpenSans-Bold)
 @font-face
 	+fontdefault(italic, 700, $OpenSans)
-	+fontpath('OpenSans OpenSans-BoldItalic', 'OpenSans-OpenSans-BoldItalic', OpenSans-OpenSans-BoldItalic)
+	+fontpath('OpenSans BoldItalic', 'OpenSans-BoldItalic', OpenSans-BoldItalic)
+	
+@font-face
+	+fontdefault(normal, 600, $OpenSans)
+	+fontpath('OpenSans SemiBold', 'OpenSans-SemiBold', OpenSans-SemiBold)
+@font-face
+	+fontdefault(italic, 600, $OpenSans)
+	+fontpath('OpenSans SemiBoldItalic', 'OpenSans-SemiBoldItalic', OpenSans-SemiBoldItalic)
 
 @font-face
 	+fontdefault(normal, 400, $OpenSans)

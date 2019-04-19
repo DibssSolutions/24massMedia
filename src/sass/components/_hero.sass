@@ -12,6 +12,11 @@
 		counter-reset: list
 		+r(1328)
 			left: 24px
+		+md
+			left: 64px
+			bottom: 103px
+		+sm
+			display: none !important
 		li
 			vertical-align: top
 			display: inline-block
@@ -75,28 +80,54 @@
 				.slick-initialized li.slick-active &
 					animation: dashPlay 6.8s linear alternate forwards
 	&__slide
+		position: relative
 		width: 100%
 		padding-bottom: 90px
 		min-height: 630px
 		white-space: normal
 		vertical-align: top
+		display: inline-block
+		+md
+			padding: 114px 0 165px 40px
+			min-height: 552px
+		+sm
+			padding: 256px 0 40px
+			min-height: 0
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center
-		display: inline-block
+		+sm
+			height: 240px
 	&__inner
+		position: relative
 		display: flex
+		+sm
+			position: static
 	&__left
 		flex-grow: 1
 		padding: 141px 0 50px
+		+md
+			padding: 0
 	&__right
 		padding-top: 97px
 		width: 280px
 		flex-shrink: 0
+		+md
+			display: none
 	&__top
 		display: flex
 		align-items: center
 		flex-wrap: wrap
+		+sm
+			position: absolute
+			top: 14px
+			left: 20px
 		&:not(:last-child)
 			margin-bottom: 39px
 		.badge
@@ -106,6 +137,8 @@
 		.date
 			margin-top: 5px
 			letter-spacing: -0.01em
+			+sm
+				display: none
 	&__title-lg
 		max-width: 580px
 		+f(36px,900,1.44)
@@ -114,6 +147,13 @@
 		display: inline-block
 		+hover
 			color: $red
+		+md
+			max-width: 525px
+			+f(32px, 900, 1.5)
+		+sm
+			position: relative
+			+f(18px,700,1.33)
+			color: $black
 		&:not([class*="color"])
 			color: currentColor
 	&__title
