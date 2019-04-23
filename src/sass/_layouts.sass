@@ -69,6 +69,8 @@
 	justify-content: space-between
 	align-items: center
 	display: flex
+	+md
+		margin-bottom: 28px
 	&__left
 		display: flex
 		align-items: center
@@ -83,6 +85,8 @@
 	&__title
 		&:not(:last-child)
 			margin-right: 65px
+			+sm
+				margin-right: 0
 	&__search
 		margin-top: 2px
 		+md
@@ -97,12 +101,21 @@
 	justify-content: space-between
 	align-items: center
 	display: flex
+	+md
+		flex-direction: column
+		align-items: flex-start
 	&__left
 		padding-right: 16px
 		flex: 1 1 auto
+		+md
+			margin-bottom: 28px
+			+fs(100%)
 	&__search
 		flex: 0 0 auto
 		width: 400px
+		+md
+			+fs(100%)
+			width: 100%
 
 .yet
 	padding: 80px 0 44px
@@ -113,6 +126,9 @@
 		padding: 39px 0 26px
 	&_bottom
 		margin-bottom: -148px
+		+md
+			padding: 36px 0 6px
+			margin-bottom: -80px
 	&__title
 		margin-bottom: 40px
 		+md
@@ -122,11 +138,15 @@
 
 .tablet-hide
 	+md
-		display: none
+		display: none !important
 .tablet-show
 	display: none
 	+md
 		display: block
 .mobile-hide
 	+sm
-		display: none
+		display: none !important
+.mobile-show
+	display: none
+	+sm
+		display: block

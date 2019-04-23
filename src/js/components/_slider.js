@@ -69,6 +69,8 @@ sliderWrap.each((i,el) => {
   const sliderNav = $('.js-gallery-nav', sliderWrap);
   const currentIdContainer = $('.js-gallery-slider-current');
   const amountContainer = $('.js-gallery-slider-all');
+  const prev = $('.js-gallery-slider-prev', sliderWrap);
+  const next = $('.js-gallery-slider-next', sliderWrap);
   const slidesAll = $('.js-gallery-slider-slide', sliderWrap).length;
   let sliderOption = {
     slidesToShow: 1,
@@ -88,6 +90,9 @@ sliderWrap.each((i,el) => {
     .on('beforeChange', function(event, slick, currentSlide, nextSlide) {
       currentIdContainer.text(nextSlide + 1);
     });
+
+  prev.on('click', () => slider.slick('slickPrev'));
+  next.on('click', () => slider.slick('slickNext'));
 
   sliderNav.slick({
     // infinite: false,
@@ -123,21 +128,64 @@ let stripSliderOption = {
   }]
 };
 
-const initStripSlider = () => {
-  if (mediaWidth(1024)) {
-    if (stripSlider.hasClass('slick-initialized')) return;
-    stripSlider.slick(stripSliderOption);
+const mobSlider = $('[data-mob-slider]');
+let mobSliderOption = {
+  slidesToShow: 2,
+  arrows: false,
+  dots: true,
+  // centerMode: true,
+  infinite: true,
+  variableWidth: true,
+  responsive: [{
+    breakpoint: 479,
+    settings: {
+      slidesToShow: 1
+    }
+  }]
+};
+
+
+const tabletSlider = $('[data-tablet-slider]');
+
+const initStripSlider = (container, option, widht) => {
+  console.log(mediaWidth(widht));
+  if (mediaWidth(widht)) {
+    if (container.hasClass('slick-initialized')) return;
+    container.slick(option);
   }
   else {
-    if (!stripSlider.hasClass('slick-initialized')) return;
-    stripSlider.slick('unslick');
+    if (!container.hasClass('slick-initialized')) return;
+    container.slick('unslick');
   }
 };
-initStripSlider();
+
+initStripSlider(stripSlider, stripSliderOption, 1024);
+initStripSlider(mobSlider, mobSliderOption, 767);
+let tabletSliderOption = mobSliderOption;
+tabletSliderOption.dots = false;
+initStripSlider(tabletSlider, tabletSliderOption, 1024);
+
+const mobImagesSlider = $('.js-images-mob-slider');
+const arrowIcon = `<svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9461 10.9413L11.9463 10.9411L13.0003 11.9999L1.05436 23.9999L0.000307424 22.9411L10.892 12.0001L0 1.05882L1.05405 0L11.9461 10.9413Z" fill="white"/>
+</svg>`;
+let mobImagesSliderOption = {
+  slidesToShow: 1,
+  dots: false,
+  prevArrow: `<botton class="images__prev">${arrowIcon}</button>`,
+  nextArrow: `<botton class="images__next">${arrowIcon}</button>`
+};
+initStripSlider(mobImagesSlider, mobImagesSliderOption, 767);
+
 let timeout;
 WIN.on('resize', () => {
   clearTimeout(timeout);
   timeout = setTimeout( () => {
-    initStripSlider();
+    initStripSlider(stripSlider, stripSliderOption, 1024);
+    initStripSlider(tabletSlider, tabletSliderOption, 1024);
+    initStripSlider(mobSlider, mobSliderOption, 767);
+    initStripSlider(mobImagesSlider, mobImagesSliderOption, 429);
   }, 200);
 });
+
+

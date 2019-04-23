@@ -300,17 +300,32 @@
 =generate_grid($columns: 12, $sizeXs: true, $sizeSm: true, $sizeMd: true, $sizeLg: true, $padding: 20px)
   .row
     margin: 0px -#{$padding}
-    +md
+    +lg
       margin: 0 -16px
     &:not(.row-flex)
       +clr
+    &.slick-slider
+      &:before
+        display: none
     &-flex
       margin: 0px -#{$padding}
       flex-wrap: wrap
       min-width: 100%
       display: flex
-      +md
+      +lg
         margin: 0 -16px
+      &.tablet-show
+        +md
+          display: flex
+      &.mobile-show
+        +md
+          display: flex
+      &.slick-slider
+        display: block
+  .row[data-mob-slider],
+  .row-flex[data-mob-slider]
+    +sm
+      margin: 0 -6px !important
   .col,
   [class*='col-']
     float: left
@@ -318,6 +333,9 @@
     width: 100%
     +lg
       padding: 0 16px
+    [data-mob-slider] &
+      +sm
+        padding: 0 6px
     &.col-right
       float: right
   @for $i from 1 through $columns

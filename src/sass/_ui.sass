@@ -291,15 +291,37 @@
 		+arr(5,3,$lightGray,b)
 
 .birthdays
+	+sm
+		display: none
+	&__slider
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			right: -20px
+			bottom: 0
+			pointer-events: none
+			z-index: 1
+			width: 120px
+			background: linear-gradient(270deg, #FFFFFF 0%, rgba(246, 248, 249, 0) 100%)
 	&__date
 		margin-bottom: 12px
 		+fmt
 		+f(24px, 700, 1.33)
+		+md
+			margin-bottom: 4px
+			font-size: 20px
+			line-height: 1.4
 	&__description
 		+fos
 		+f(13px,700,1.54)
 		color: #CFCFD9
 		text-transform: uppercase
+		+md
+			font-size: 13px
+			line-height: 1.54
+			letter-spacing: 0.02em
 
 .img
 	position: relative
@@ -324,22 +346,61 @@
 		+fos
 		+f(14px,400,1.42)
 		background: linear-gradient(180deg, rgba(42, 42, 44, 0) 0%, rgba(#2A2A2C, .8) 100%)
+		+sm
+			padding: 35px 12px 8px
+			font-size: 12px
 
 .images
 	margin: 0 -2px
 	flex-wrap: wrap
 	display: flex
+	+sm
+		margin: 0
+		font-size: 0
 	&:not(:first-child)
 		.article &,
 		article &
 			margin-top: 56px
+			+sm
+				margin-top: 32px
 	&:not(:last-child)
 		.article &,
 		article &
 			margin-bottom: 56px
+			+sm
+				margin-bottom: 32px
 	&__col
 		padding: 0 2px
 		width: 50%
+		+ms
+			padding: 0
+			width: 100%
+	&__prev,
+	&__next
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 48px
+		z-index: 1
+		background: linear-gradient(90deg, rgba(42, 42, 44, 0) 0%, #2A2A2C 100%)
+		opacity: 0.6
+		transition: opacity .3s
+		&:active
+			opacity: 1
+			svg
+				opacity: 1
+		svg
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 12px
+			opacity: .4
+			transition: opacity .3s
+	&__prev
+		left: 0
+		transform: matrix(-1, 0, 0, 1, 0, 0)
+	&__next
+		right: 0
 	.img
 		.article &,
 		article &
@@ -350,14 +411,22 @@
 	+fos
 	+f(16px,400,2)
 	background: linear-gradient(0deg, #F6F8F9, #F6F8F9)
+	+sm
+		padding: 30px 20px 36px
+		font-size: 14px
+		line-height: 1.7
 	&__title
 		margin-bottom: 28px
+		+sm
+			margin-bottom: 16px
 	&__item
 		display: block
 		&:before
 			content: '— '
 		&:not(:first-child)
 			margin-top: 20px
+			+sm
+				margin-top: 16px
 
 .sign
 	align-items: center

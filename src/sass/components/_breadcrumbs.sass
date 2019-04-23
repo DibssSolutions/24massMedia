@@ -4,10 +4,18 @@
 	+f(12px,400,1.67)
 	display: flex
 	flex-wrap: wrap
+	+md
+		padding: 0 0 32px
+		height: 0
+		overflow: hidden
+	+sm
+		padding: 0 0 26px
 	&__item
 		position: relative
 		vertical-align: top
 		display: inline-block
+		+md
+			display: none
 		&:not(:last-child)
 			padding-right: 25px
 			&:before

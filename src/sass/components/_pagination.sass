@@ -8,6 +8,8 @@
 	.pagination__next
 		+fos
 		line-height: 50px
+		+lg
+			line-height: 43px
 	&__list
 		display: flex
 		flex-wrap: wrap
@@ -15,8 +17,21 @@
 		align-items: center
 	li
 		min-width: 56px
+		+lg
+			min-width: 48px
+		+sm
+			display: none
 		&:not(:first-child)
 			margin-left: 8px
+		&:nth-child(7)
+			+md
+				display: none
+		&:first-child,
+		&:nth-child(2),
+		&:nth-child(3)
+			+sm
+				display: inline-block
+
 	a
 		height: 56px
 		min-width: 56px
@@ -26,6 +41,10 @@
 		border-radius: 4px
 		transition: color .3s, background-color .3s, border-color .3s
 		display: block
+		+lg
+			height: 48px
+			min-width: 48px
+			line-height: 46px
 		+hover
 			color: $white
 			border-color: $red

@@ -42,6 +42,8 @@
 		margin-top: -8px
 		font-size: 0
 		line-height: 1
+		+sm
+			display: none
 		.icon
 			font-size: 16px
 	&__control
@@ -49,8 +51,17 @@
 		margin-right: -4px
 		.input input
 			padding-left: 56px
+			+sm
+				padding-left: 20px
 	&__submit
 		flex: 0 0 auto
+		+sm
+			padding: 14px
+			font-size: 0
+			min-height: 48px
+			min-width: 48px
+		.icon
+			font-size: 16px
 
 .input input
 	padding: 5px 20px

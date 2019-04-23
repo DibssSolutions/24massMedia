@@ -1,4 +1,5 @@
 .gallery-slider-wrap
+	position: relative
 	&:not(:first-child)
 		margin-top: 64px
 		+md
@@ -9,6 +10,33 @@
 		+md
 			margin-bottom: 48px
 			margin-bottom: 32px
+.gallery-slider-prev,
+.gallery-slider-next
+	position: absolute
+	top: 0
+	bottom: 0
+	z-index: 2
+	width: 80px
+	color: $white
+	opacity: 0.8
+	background: linear-gradient(90deg, rgba(42, 42, 44, 0) 50%, #2A2A2C 150%)
+	+hover
+		.icon
+			opacity: 1
+	.icon
+		position: absolute
+		top: 50%
+		right: 24px
+		transform: translateY(-50%)
+		opacity: 0.4
+		transition: opacity .3s
+		font-size: 24px
+
+.gallery-slider-prev
+	left: 0
+	transform: matrix(-1, 0, 0, 1, 0, 0)
+.gallery-slider-next
+	right: 0
 .gallery-slider
 	+fos
 	+f(14px,400,1.42)
@@ -30,6 +58,7 @@
 		position: absolute
 		left: 0
 		bottom: 0
+		z-index: 30000
 		width: 100%
 		padding: 18px 24px
 		color: $white
@@ -110,6 +139,9 @@
 		height: 110px
 		transition: opacity .3s, visibility .3s
 		opacity: 0.8
+		+sm
+			height: 72px
+			width: 48px
 		&.slick-disabled
 			opacity: 0
 			visibility: hidden
@@ -130,3 +162,41 @@
 		position: absolute
 		right: 0
 		background: linear-gradient(90deg, rgba(42, 42, 44, 0) 0%, #2A2A2C 100%)
+
+[data-mob-slider]
+	+sm
+		white-space: nowrap
+		+fadeout(.3s)
+		display: block
+	&.slick-initialized
+		+sm
+			+fadein
+			white-space: normal
+	.slick-list
+		overflow: visible !important
+	.slick-dots
+		width: 100%
+		text-align: center
+		font-size: 0
+		li
+			vertical-align: top
+			display: inline-block
+			&:not(:first-child)
+				margin-left: 12px
+			&.slick-active
+				button
+					background-color: #F15145
+		button
+			+circle(8)
+			font-size: 0
+			display: block
+			background-color: #CFCFD9
+[data-tablet-slider]
+	+md
+		white-space: nowrap
+		+fadeout(.3s)
+		display: block
+	&.slick-initialized
+		+md
+			+fadein
+			white-space: normal

@@ -254,16 +254,16 @@
             </ul>
             <!-- end breadcrumbs -->
             <div class="photo-page__row row-flex">
-              <div class="photo-page__col main col-8">
+              <div class="photo-page__col main col-8 col-md-12">
                 <!-- begin head -->
                 <div class="head">
                   <div class="head__inner">
                     <h2 class="head__title title-lg">Фото</h2>
                     <div class="head__filter filter">
                       <div class="filter__left">
-                        <div class="description">Bradley Cooper</div>
+                        <div class="filter__description description">Bradley Cooper</div>
                       </div>
-                      <div class="filter__right">
+                      <div class="filter__right mobile-hide">
                         <div class="text-control">
                           <div class="text-label">Показывать по:</div>
                           <select class="select js-select" data-width="100%" data-icon-arrow="arrow-bottom">
@@ -328,9 +328,9 @@
                   <ul class="pagination__list">
                     <li><a href="#">1</a></li>
                     <li><span>...</span></li>
-                    <li><a href="#">3</a></li>
+                    <li><a class="is-active" href="#">3</a></li>
                     <li><a href="#">4</a></li>
-                    <li><a class="is-active" href="#">5</a></li>
+                    <li><a href="#">5</a></li>
                     <li><a href="#">6</a></li>
                     <li><a href="#">7</a></li>
                     <li><span>...</span></li>
@@ -342,17 +342,88 @@
                     </svg>
                   </a>
                 </div>
+                <!-- begin wind -->
+                <div class="photo-page__wind wind tablet-show">
+                  <div class="head">
+                    <div class="head__inner">
+                      <div class="head__title title-lg">Последние</div>
+                      <div class="head__description description">Брэдли Купер</div>
+                    </div>
+                  </div>
+                  <div class="wind__row row-flex">
+                    <div class="wind__col-sm col col-md-6 col-sm-12">
+                      <!-- begin card -->
+                      <div class="card-sm">
+                        <a href="#" class="card-sm__link"></a>
+                        <div class="card-sm__img" style="background-image: url(./img/card-sm-1.jpg);"></div>
+                        <div class="card-sm__wrap">
+                          <div class="card-sm__title">Лоза рассказал о своем отношении к группе <br>The Beatles</div>
+                          <div class="card-sm__footer">
+                            <a href="#" class="card-sm__badge badge badge_simple">Шоу-бизнес</a>
+                            <div class="card-sm__date date date_light date_int">17.01 в 10:59</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end card -->
+                    </div>
+                    <div class="wind__col-sm col col-md-6 col-sm-12">
+                      <!-- begin card -->
+                      <div class="card-sm">
+                        <a href="#" class="card-sm__link"></a>
+                        <div class="card-sm__img" style="background-image: url(./img/card-sm-2.jpg);"></div>
+                        <div class="card-sm__wrap">
+                          <div class="card-sm__title">Мария Шукшина отреагировала на участие дочери в «Пусть говорят»</div>
+                          <div class="card-sm__footer">
+                            <a href="#" class="card-sm__badge badge badge_simple">Общество</a>
+                            <div class="card-sm__date date date_light date_int">17.01 в 09:20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end card -->
+                    </div>
+                    <div class="wind__col-sm col col-md-6 col-sm-12">
+                      <!-- begin card -->
+                      <div class="card-sm">
+                        <a href="#" class="card-sm__link"></a>
+                        <div class="card-sm__img" style="background-image: url(./img/card-sm-3.jpg);"></div>
+                        <div class="card-sm__wrap">
+                          <div class="card-sm__title">Суд не нашел плагиат <br>в песне «Чика» Александра Реввы</div>
+                          <div class="card-sm__footer">
+                            <a href="#" class="card-sm__badge badge badge_simple">Факты</a>
+                            <div class="card-sm__date date date_light date_int">17.01 в 09:02</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end card -->
+                    </div>
+                    <div class="wind__col-sm col col-md-6 col-sm-12">
+                      <!-- begin card -->
+                      <div class="card-sm">
+                        <a href="#" class="card-sm__link"></a>
+                        <div class="card-sm__img" style="background-image: url(./img/card-sm-4.jpg);"></div>
+                        <div class="card-sm__wrap">
+                          <div class="card-sm__title">В Apple объявили о планах в ближайшее время снизить цены на iPhone</div>
+                          <div class="card-sm__footer">
+                            <a href="#" class="card-sm__badge badge badge_simple">Экономика</a>
+                            <div class="card-sm__date date date_light date_int">16.01 в 17:02</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end card -->
+                    </div>
+                  </div>
+                </div>
+                <!-- end wind -->
               </div>
-              <div class="photo-page__col col-4">
+              <div class="photo-page__col tablet-hide col-4">
                 <div class="sidebar">
-                  <!-- end sm-banner -->
                   <div class="sidebar__wrap">
                     <!-- begin wind -->
                     <div class="sidebar__field wind">
                       <div class="head">
-                        <div class="head__left">
+                        <div class="head__inner">
                           <div class="head__title title-lg">Последние</div>
-                          <div class="description">Брэдли Купер</div>
+                          <div class="head__description description">Брэдли Купер</div>
                         </div>
                       </div>
                       <div class="wind__row row-flex">
@@ -494,8 +565,9 @@
         <!-- begin yet -->
         <div class="yet yet_bottom">
           <div class="yet__inner inner">
-            <div class="yet__row row-flex">
-              <div class="news__col col-12">
+            <h3 class="yet__title title">Читайте также</h3>
+            <div class="yet__row row-flex" data-mob-slider>
+              <div class="news__col col-12 js-mobile-remove">
                 <!-- begin banner -->
                 <div class="banner color-white">
                   <div class="banner__left">
@@ -505,11 +577,11 @@
                       <a href="#" class="banner__btn btn-simple">Создать поздравление</a>
                     </span>
                   </div>
-                  <img src="./img/banner-left.jpg" alt="img">
+                  <img src="./img/banner-left.jpg" alt="img" style="object-position: 70%;">
                 </div>
                 <!-- end banner -->
               </div>
-              <div class="news__col col-4 col-md-6 col-sm-12">
+              <div class="news__col col-4 col-md-6 col-sm-12 js-mobile-remove">
                 <!-- begin sm-banner -->
                 <a href="#" class="sm-banner" style="background-image: url(./img/banner-sm-1.jpg);">
                   <div class="sm-banner__inner">

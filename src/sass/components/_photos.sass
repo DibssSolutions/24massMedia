@@ -1,8 +1,18 @@
 .photo-page
 	padding-bottom: 96px
+	+md
+		padding-bottom: 36px
 	&__pagination
 		margin-top: 64px
-
+		+md
+			margin-top: 48px
+		+sm
+			margin-top: 32px
+	&__wind
+		+md
+			margin-top: 64px
+		+sm
+			margin-top: 40px
 .photos
 	&__row
 		margin: 0 -6px -12px
@@ -12,6 +22,8 @@
 		padding: 0 6px
 		margin-bottom: 12px
 		+fs(33.3%)
+		+ms
+			+fs(50%)
 .photo
 	padding-bottom: 124%
 	background-size: cover

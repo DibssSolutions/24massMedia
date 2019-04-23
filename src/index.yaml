@@ -8,8 +8,10 @@ PageList:
 - file: category-news.html
   ready: 100
 - file: persons.html
-  ready: 50
+  ready: 100
 - file: card.html
-  ready: 50
+  ready: 100
 - file: photo.html
+  ready: 100
+- file: typical-page.html
   ready: 50

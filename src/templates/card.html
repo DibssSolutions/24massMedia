@@ -20,79 +20,176 @@ title: Card
 				</div>				
 			</div>
 			<div class="card-page__row row-flex">
-				<div class="card-page__col main col-8">
+				<div class="card-page__col main col-8 col-md-12" data-accordion-group>
 					<!-- begin cardtable -->
 					<div class="cardtable">
 						<div class="cardtable__img cardtable__img_ml" style="background-image: url(./img/kira.jpg);">
 							<div class="cardtable__btn">
-								<a href="#" class="btn-simple btn-simple_full">Смотреть всю галерею</a>
+								<a href="#" class="btn-simple btn-simple_full">Смотреть <span class="tablet-hide">всю</span> галерею</a>
 							</div>
 						</div>
 						<div class="cardtable__wrap">
-							<div class="cardtable__field">
-								<div class="cardtable__left">Карьера</div>
-								<div class="cardtable__right">
-									<a href="#">Актер театра и кино</a>, 
-									<a href="#">Режиссер</a>, 
-									<a href="#">Продюссер</a>, 
-									<a href="#">Сценарист</a>
-								</div>
-							</div>
-							<div class="cardtable__field">
-								<div class="cardtable__left">Дата рождения</div>
-								<div class="cardtable__right">
-									<span class="cardtable__date">5 января 1975 г.</span>
-									<a href="#" class="sign">
-										<span class="sign__icon">{{ mixins.icon('libra') }}</span>
-										<span class="sign__text">весы</span>
-									</a>
-									<div>
-										<a href="#">Кто родился в этот день?</a>
+							<div class="mob-accordion" data-accordion-item data-accordion-on-init="768">
+								<div class="mob-accordion__title mobile-show" data-accordion-trigger>О знаменитости{{ mixins.icon('arrow-bottom', 'mobile-show') }}</div>
+								<div class="mob-accordion__wrap" data-accordion-container>
+									<div class="cardtable__field">
+										<div class="cardtable__left">Карьера</div>
+										<div class="cardtable__right">
+											<a href="#">Актер театра и кино</a>, 
+											<a href="#">Режиссер</a>, 
+											<a href="#">Продюссер</a>, 
+											<a href="#">Сценарист</a>
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="cardtable__field">
-								<div class="cardtable__left">Возраст</div>
-								<div class="cardtable__right">44 года</div>
-							</div>
-							<div class="cardtable__field">
-								<div class="cardtable__left">Место рождения</div>
-								<div class="cardtable__right"><a href="#">Филадельфия, США</a></div>
-							</div>
-							<div class="cardtable__field">
-								<div class="cardtable__left">Рост</div>
-								<div class="cardtable__right">185 см</div>
-							</div>
-							<div class="cardtable__field">
-								<div class="cardtable__left">Семейное положение</div>
-								<div class="cardtable__right">в гражданском браке с <a href="#">Ирина Шейк</a></div>
-							</div>
-							<div class="cardtable__field">
-								<div class="cardtable__left">Соцсети</div>
-								<div class="cardtable__right">
-									<!-- begin soc -->
-									<div class="soc">
-										<ul class="soc__list">
-											{% for icon in ['wikipedia', 'vk', 'tel', 'tw', 'fb', 'inst', 'globe'] %}
-											    <li class="soc__item">
-											    	<a class="soc__link" href="#">
-												    	{{ mixins.icon(icon) }}
-												    </a>
-												</li>
-											{% endfor %}
-										</ul>
+									<div class="cardtable__field">
+										<div class="cardtable__left">Дата рождения</div>
+										<div class="cardtable__right">
+											<span class="cardtable__date">5 января 1975 г.</span>
+											<a href="#" class="sign">
+												<span class="sign__icon">{{ mixins.icon('libra') }}</span>
+												<span class="sign__text">весы</span>
+											</a>
+											<div>
+												<a href="#">Кто родился в этот день?</a>
+											</div>
+										</div>
 									</div>
-									<!-- end soc -->
+									<div class="cardtable__field">
+										<div class="cardtable__left">Возраст</div>
+										<div class="cardtable__right">44 года</div>
+									</div>
+									<div class="cardtable__field">
+										<div class="cardtable__left">Место рождения</div>
+										<div class="cardtable__right"><a href="#">Филадельфия, США</a></div>
+									</div>
+									<div class="cardtable__field">
+										<div class="cardtable__left">Рост</div>
+										<div class="cardtable__right">185 см</div>
+									</div>
+									<div class="cardtable__field">
+										<div class="cardtable__left">Семейное положение</div>
+										<div class="cardtable__right">в гражданском браке с <a href="#">Ирина Шейк</a></div>
+									</div>
+									<div class="cardtable__field">
+										<div class="cardtable__left">Соцсети</div>
+										<div class="cardtable__right">
+											<!-- begin soc -->
+											<div class="soc">
+												<ul class="soc__list">
+													{% for icon in ['wikipedia', 'vk', 'tel', 'tw', 'fb', 'inst', 'globe'] %}
+													    <li class="soc__item">
+													    	<a class="soc__link" href="#">
+														    	{{ mixins.icon(icon) }}
+														    </a>
+														</li>
+													{% endfor %}
+												</ul>
+											</div>
+											<!-- end soc -->
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- end cardtable -->
+					<div class="card-page__maintenance row-flex tablet-show">
+						<div class="card-page__sm-banner col-6 col-sm-12">
+							<!-- begin wind -->
+							<div class="mob-accordion wind" data-accordion-item data-accordion-on-init="768">
+								<div class="mob-accordion__title wind__title title-sm" data-accordion-trigger>Содержание{{ mixins.icon('arrow-bottom', 'mobile-show') }}</div>
+								<ul class="mob-accordion__wrap nav-list js-nav-list" data-accordion-container>
+									{% for item in [
+										{
+											title: 'Биография',
+											id: 'biography'
+										},
+										{
+											title: 'Детство и юность',
+											id: 'childhood-and-youth'
+										},
+										{
+											title: 'Фильмы',
+											id: 'films'
+										},
+										{
+											title: 'Личная жизнь',
+											id: 'personal-life'
+										},
+										{
+											title: 'Брэдли Купер сейчас',
+											id: 'bradley-cooper-now'
+										},
+										{
+											title: 'Интересное',
+											id: 'interesting'
+										}] %}
+									    <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+									{% endfor %}
+								</ul>
+							</div>
+							<!-- end wind -->
+						</div>
+						<div class="col-6 col-sm-12">
+							<!-- begin sm-banner -->
+							<a href="#" class="sm-banner" style="background-image: url(./img/banner-sm-1.jpg);">
+								<div class="sm-banner__inner">
+									<div class="sm-banner__badge">
+										<span class="badge badge_red">с 23 января по 28 февраля</span>
+									</div>
+									<div class="sm-banner__title">Рассрочка без переплат на 24 месяца</div>
+									<div class="sm-banner__text">на все телевизоры LG</div>
+								</div>
+							</a>
+							<!-- end sm-banner -->
+						</div>
+					</div>
 					<!-- begin article -->
 					<article class="article">
 						<h3 id="biography">Биография</h3>
 						<p>Брэдли Купер – популярный американский актер. Его путь к славе был нелегким, но Брэдли сумел раскрыть артистический талант в полной мере благодаря кинолентам «Мальчишник в Вегасе», «Афера по-американски».</p>
 						<p>Его карьера сейчас в самом расцвете, он появляется в кассовых проектах и уже был четырежды номинирован на «Оскар», а в 2018 году дебютировал с режиссерским проектом «Звезда родилась», который был тепло встречен кинокритиками.</p>
+						<!-- begin wind -->
+						<div class="article__wind wind tablet-show">
+							<div class="wind__row row-flex">
+							{% for item in [
+								{
+									img: 'card-sm-1.jpg',
+									title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+									badgeContent: 'Шоу-бизнес',
+									date: '17.01 в 10:59'
+								},
+								{
+									img: 'card-sm-2.jpg',
+									title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+									badgeContent: 'Общество',
+									date: '17.01 в 09:20'
+								},
+								{
+									img: 'card-sm-3.jpg',
+									title: 'Суд не нашел плагиат <br>в песне «Чика» Александра Реввы',
+									badgeContent: 'Факты',
+									date: '17.01 в 09:02'
+								},
+								{
+									img: 'card-sm-4.jpg',
+									title: 'В Apple объявили о планах в ближайшее время снизить цены на iPhone',
+									badgeContent: 'Экономика',
+									date: '16.01  в 17:02'
+								}
+							] %}
+								<div class="wind__col-sm col col-md-6 col-sm-12">
+								    {{ mixins.cardSm({
+										img: item.img,
+										title: item.title,
+										badgeContent: item.badgeContent,
+										date: item.date
+								    }) }}
+								</div>
+							{% endfor %}
+							</div>
+						</div>
+						<!-- end wind -->
 						<h3 id="childhood-and-youth">Детство и юность</h3>
 						<p>Брэдли Купер, сын Глории и Чарли Куперов, родился 5 января 1975 года в городе Филадельфия, штат Пенсильвания. Мать Брэдли работала на телекомпанию NBC, а его отец был стоковым брокером в американском инвестиционном банке Меррилл Линч. Мальчик был младшим ребенком в семье.</p>
 						<p>В детстве Брэдли и его старшая сестра Холли воспитывались согласно религиозным верованиям католической церкви, прихожанами которой являлось семейство Купер. Помимо религии, свой отпечаток на воспитание актера наложили и особенности происхождения его родителей: Чарли был ирландским эмигрантом, а семейство его матери имело итальянские корни.</p>
@@ -102,7 +199,7 @@ title: Card
 						</div>
 						<p>В 5 лет, после начала занятий дайвингом, у мальчика диагностировали холестеатому среднего уха, которая могла бы навредить слуху будущего актера. Однако оперативное вмешательство врачей и серия сложных операций, длившихся вплоть до 18-летия парня, помогли избежать негативных последствий.</p>
 						<p>Поступив в Академию Джермантаун в Форт Вашингтон, Брэдли подружился с Брайаном Клагманом, также будущим актером и сценаристом. Помимо учебы, Купер в молодости подрабатывал в газете ежедневных новостей Филадельфии.</p>
-						<div class="images">
+						<div class="images js-images-mob-slider">
 							<div class="images__col">
 								<div class="img">
 									<img src="./img/card-2.jpg" alt="img">
@@ -122,6 +219,8 @@ title: Card
 						<p>Брэдли Купер начал сниматься, еще будучи студентом университета. Его первой ролью стало эпизодическое появление в культовом сериале  «Секс в большом городе»  в 1999 году. Потом актер засветился в научно-популярном шоу «Globe Trekker» в качестве телеведущего. Внешность и рост позволяли играть ему различные роли: от героев-любовников до комедийных простаков.</p>
 						<p>В 2000 году окончил курс университета и стал магистром в области изобразительных искусств.</p>
 						<div class="gallery-slider-wrap js-gallery-slider-wrap">
+							<button class="gallery-slider-prev js-gallery-slider-prev" type="butoon">{{ mixins.icon('arrow-right-lg')}}</button>
+							<button class="gallery-slider-next js-gallery-slider-next" type="butoon">{{ mixins.icon('arrow-right-lg')}}</button>
 							<!-- begin gallery-slider -->
 							<div class="gallery-slider js-gallery-slider">
 								{% for slide in [
@@ -194,7 +293,7 @@ title: Card
 							<div class="article-footer__soc">
 								<!-- begin soc -->
 								<div class="soc">
-									<div class="soc__description mobile-hide">Мы в соцсетях:</div>
+									<div class="soc__description mobile-hide">Поделиться</div>
 									<ul class="soc__list">
 										{% for icon in ['vk', 'tel', 'tw', 'youtube', 'inst'] %}
 										    <li class="soc__item">
@@ -242,8 +341,55 @@ title: Card
 						<!-- end facts -->
 					</div>
 					<!-- end article-footer -->
+					<!-- begin wind -->
+					<div class="card-page__wind wind tablet-show">
+						<div class="head">
+							<div class="head__inner">
+								<div class="head__title title-lg">Последние новости</div>
+								<div class="head__description description">Брэдли Купер</div>
+							</div>
+						</div>
+						<div class="wind__row row-flex">
+						{% for item in [
+							{
+								img: 'card-sm-1.jpg',
+								title: 'Лоза рассказал о своем отношении к группе <br>The Beatles',
+								badgeContent: 'Шоу-бизнес',
+								date: '17.01 в 10:59'
+							},
+							{
+								img: 'card-sm-2.jpg',
+								title: 'Мария Шукшина отреагировала на участие дочери в «Пусть говорят»',
+								badgeContent: 'Общество',
+								date: '17.01 в 09:20'
+							},
+							{
+								img: 'card-sm-3.jpg',
+								title: 'Суд не нашел плагиат <br>в песне «Чика» Александра Реввы',
+								badgeContent: 'Факты',
+								date: '17.01 в 09:02'
+							},
+							{
+								img: 'card-sm-4.jpg',
+								title: 'В Apple объявили о планах в ближайшее время снизить цены на iPhone',
+								badgeContent: 'Экономика',
+								date: '16.01  в 17:02'
+							}
+						] %}
+							<div class="wind__col-sm col col-md-6 col-sm-12">
+							    {{ mixins.cardSm({
+									img: item.img,
+									title: item.title,
+									badgeContent: item.badgeContent,
+									date: item.date
+							    }) }}
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+					<!-- end wind -->
 				</div>
-				<div class="card-page__col col-4">
+				<div class="card-page__col col-4 tablet-hide">
 					<div class="sidebar">
 						<!-- begin wind -->
 						<div class="sidebar__field wind">

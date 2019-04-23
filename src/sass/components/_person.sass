@@ -1,18 +1,50 @@
 .persons
 	&__head
 		margin-bottom: 32px
+		+md
+			margin-bottom: 40px
+		+sm
+			margin-bottom: 27px
 	&__row
 		margin-bottom: -36px
 	&__col
 		margin-bottom: 36px
 	&__footer
 		margin-top: 56px
+		+md
+			margin-top: 4px
 	&__birthdays
 		margin-bottom: 40px
 	&__menu
+		position: relative
 		margin-bottom: 48px
+		+md
+			margin-bottom: 36px
+			&:before,
+			&:after
+				position: absolute
+				content: ''
+				top: 0
+				right: 0
+				z-index: 1
+				pointer-events: none
+				width: 76px
+				bottom: 0
+				background: linear-gradient(270deg, #F6F8F9 0%, rgba(246, 248, 249, 0) 100%)
+			&:after
+				position: absolute
+				content: ''
+				left: 0
+				right: auto
+				transform: rotate(180deg)
+		+sm
+			margin-bottom: 20px
 	&__filter
 		margin: 48px 0 32px
+		+md
+			margin: 36px 0 23px
+		+sm
+			margin: 20px 0 15px
 .person
 	color: $black
 	+hover
@@ -25,30 +57,61 @@
 		background-repeat: no-repeat
 		background-position: center
 		display: block
+		+md
+			margin-bottom: 14px
+			height: 271px
+		+sm
+			margin-bottom: 6px
+			height: 160px
 	&__profession
 		+fos
 		+f(11px,700,1.64)
 		color: #CFCFD9
 		text-transform: uppercase
 		display: block
+		+sm
+			font-size: 10px
 	&__name
 		margin-top: 12px
 		+f(18px,600,1.4)
 		display: block
 		transition: color .3s ease-in-out
+		+md
+			margin-top: 8px
+		+sm
+			margin-top: 2px
+			font-size: 13px
 
 .menu
+	position: relative
 	padding: 33px 40px 35px
 	display: flex
 	flex-wrap: wrap
 	+f(14px,600,1.43)
 	background-color: #F6F8F9
+	+lg
+		padding: 28px 20px
 	+md
+		white-space: nowrap
+		font-size: 14px
+		overflow-x: auto
 		display: block
+	+sm
+		padding: 23px 20px
+		font-size: 13px
 	&__item
 		position: relative
+		+md
+			vertical-align: top
+			display: inline-block
 		&:not(:first-child)
 			margin-left: 33px
+			+lg
+				margin-left: 12px
+			+md
+				margin-left: 40px
+			+sm
+				margin-left: 36px
 		+hover
 			.menu__link
 				color: $red
@@ -63,7 +126,7 @@
 				+fadein
 	&__link
 		position: relative
-		padding: 0 8px
+		// padding: 0 8px
 		transition: color .3s ease-in-out
 		color: currentColor
 		display: block
@@ -80,6 +143,8 @@
 			height: 1px
 			+fadeout(.3s)
 			background-color: $red
+			+md
+				display: none
 		&:after
 			position: absolute
 			content: ''
@@ -93,7 +158,6 @@
 			color: $red
 	&__btn
 		position: relative
-		margin-left: 41px
 		padding-right: 37px
 		+fmt
 		color: currentColor
@@ -151,16 +215,39 @@
 		border-radius: 4px
 		box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.16)
 		background-color: $white
+		+md
+			display: none
+			position: relative
+			top: 0
+			right: auto
+			width: auto
+			margin-top: 0
+			padding: 0
+			+fadein
+			border-radius: 0
+			box-shadow: none
+			background-color: transparent
 		.menu__item:last-child &
 			left: auto
 			right: -10px
+			+md
+				display: block
 		li
 			display: block
+			+md
+				vertical-align: top
+				display: inline-block
 			&:not(:last-child)
 				margin-bottom: 20px
+				+md
+					margin: 0 40px 0 0
+				+sm
+					margin-right: 36px
 		a
 			color: currentColor
 			transition: color .3s
 			display: block
+			+md
+				font-weight: 600
 			+hover
 				color: $red

@@ -3,14 +3,24 @@
 	z-index: 1
 	padding: 64px 0 58px
 	text-align: center
+	+md
+		padding: 38px 40px 39px
+	[data-mob-slider] &
+		+sm
+			padding: 20px
+			max-width: 280px
 	&:not(:first-child)
 		.article &,
 		article &
 			margin-top: 56px
+			+sm
+				margin-top: 32px
 	&:not(:last-child)
 		.article &,
 		article &
 			margin-bottom: 56px
+			+sm
+				margin-bottom: 32px
 	img
 		position: absolute
 		top: 0
@@ -25,18 +35,37 @@
 		+fmt
 		+f(28px,700,1.4)
 		display: block
+		+md
+			margin-bottom: 16px
+			+f(20px,700,1.6)
+		+sm
+			margin: 0 -20px 20px
+			line-height: 1.2
 	&__text
 		display: block
+		+sm
+			line-height: 1.2
 	&__buttons
 		margin-top: 36px
 		display: block
+		+md
+			margin-top: 30px
+		.btn-simple
+			+ms
+				width: 100%
 	&__left
 		padding-left: 88px
 		padding-bottom: 10px
 		max-width: 480px
 		text-align: left
+		+md
+			padding-left: 0
+			max-width: 330px
 		.btn-simple
 			min-width: 280px
+			[data-mob-slider] &
+				+sm
+					min-width: 240px
 
 .sm-banner
 	min-height: 345px
@@ -48,6 +77,9 @@
 	display: block
 	+md
 		min-height: 300px
+	[data-mob-slider] &
+		+sm
+			max-width: 280px
 	+hover
 		.sm-banner__title
 			color: $red
@@ -59,6 +91,8 @@
 		width: 100%
 		+md
 			padding: 25px
+		+sm
+			padding: 25px 12px
 	&__badge
 		margin-bottom: 15px
 		+md
@@ -72,6 +106,9 @@
 		transition: color .3s
 		&:not(:last-child)
 			margin-bottom: 15px
+		+sm
+			font-size: 14px
+			max-width: 220px
 	&__text
 		+fos
 		+f(11px,700,1.43)

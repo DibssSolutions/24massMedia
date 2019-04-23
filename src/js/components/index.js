@@ -1,3 +1,4 @@
+import './_mobileRemove';
 import './_slider';
 import './_header';
 import './_threeDots';

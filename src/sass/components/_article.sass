@@ -31,8 +31,16 @@ article
 	h3
 		&:not(:first-child)
 			margin-top: 48px
+			+sm
+				margin-top: 32px
 		&:not(:last-child)
 			margin-bottom: 32px
+			+sm
+				margin-bottom: 14px
+		+md
+			font-size: 20px
+		+sm
+			font-size: 18px
 	h2
 		font-size: 24px
 		+md
@@ -51,6 +59,12 @@ article
 		&:not([class*="btn"])
 			color: currentColor
 			transition: border-color .3s
+	.card-sm a,
+	a.card-sm
+		border: none
+	&__wind
+		&:not(:first-child)
+			margin-top: 44px
 
 .article-footer
 	margin-top: 67px
@@ -97,8 +111,13 @@ article
 			order: -1
 			margin-bottom: 28px
 	&__facts
+		+sm
+			margin-left: -20px
+			margin-right: -20px
 		&:not(:first-child)
 			margin-top: 64px
+			+sm
+				margin-top: 40px
 	&__wind
 		&:not(:first-child)
 			margin-top: 48px
