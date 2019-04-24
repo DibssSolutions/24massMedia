@@ -313,16 +313,17 @@
 		display: none
 	&__slider
 		position: relative
-		&:before
-			position: absolute
-			content: ''
-			top: 0
-			right: -20px
-			bottom: 0
-			pointer-events: none
-			z-index: 1
-			width: 120px
-			background: linear-gradient(270deg, #FFFFFF 0%, rgba(246, 248, 249, 0) 100%)
+		+md
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				right: -20px
+				bottom: 0
+				pointer-events: none
+				z-index: 1
+				width: 120px
+				background: linear-gradient(270deg, #FFFFFF 0%, rgba(246, 248, 249, 0) 100%)
 	&__date
 		margin-bottom: 12px
 		+fmt
