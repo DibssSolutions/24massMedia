@@ -48,6 +48,13 @@
 	+hover
 		.celebrity__title
 			color: $red
+	&_xs-full
+		padding: 12px 24px
+		transition: background-color .3s
+		+hover
+			background-color: #F6F8F9
+			.celebrity__title
+				color: currentColor
 	[data-tablet-slider] &
 		+md
 			width: 280px
@@ -61,6 +68,8 @@
 			+circle(80)
 		.celebrity_sm &
 			+circle(64)
+		.celebrity_xs-full &
+			+circle(56)
 	&__content
 		padding-left: 30px
 		+md
@@ -69,12 +78,20 @@
 			padding-left: 10px
 		.celebrity_sm &
 			padding-left: 24px
+		.celebrity_xs-full &
+			padding-left: 16px
 	&__title
 		margin-bottom: 4px
 		transition: color .3s
 		+f(16px,600,1.25)
+		.celebrity_xs-full &
+			+sm
+				font-size: 14px
 	&__profession
 		+f(14px,400,1.42)
+		.celebrity_xs-full &
+			+sm
+				font-size: 13px
 	&__text
 		height: 60px
 		+md

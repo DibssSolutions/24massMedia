@@ -1,4 +1,5 @@
 .search-simple
+	position: relative
 	display: flex
 	width: 400px
 	&__btn
@@ -31,8 +32,10 @@
 			&::placeholder
 				color: #A9A9B2
 
+
 .search
 	position: relative
+	z-index: 3
 	align-items: center
 	display: flex
 	&__icon
@@ -54,6 +57,7 @@
 			+sm
 				padding-left: 20px
 	&__submit
+		position: relative
 		flex: 0 0 auto
 		+sm
 			padding: 14px
@@ -62,18 +66,86 @@
 			min-width: 48px
 		.icon
 			font-size: 16px
+.search-simple,
+.search
+	&__results
+		position: absolute
+		top: 100%
+		left: 0
+		margin-top: 8px
+		padding: 12px 0 24px
+		width: 100%
+		max-width: 400px
+		min-width: 278px
+		box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.16)
+		background-color: $white
+		border-radius: 4px
+		max-height: 400px
+		overflow: auto
+	&__head
+		position: relative
+		&:not(:last-child)
+			padding-bottom: 12px
+			&:before
+				position: absolute
+				content: ''
+				left: 24px
+				right: 24px
+				bottom: 0
+				height: 1px
+				background: #F2F2F2
+	&__footer
+		padding: 30px 24px 0
+	&__history
+		justify-content: space-between
+		display: flex
+	&__label
+		font-size: 14px
+		line-height: 1.43
+		color: #A9A9B2
+	&__clear-btn
+		+fmt
+		+f(14px,400,1.43)
+		color: currentColor
+		transition: color .3s
+		background-color: transparent
+		+hover
+			color: $red
+	&__request
+		font-size: 14px
+		line-height: 1.4
+		&:not(:first-child)
+			margin-top: 18px
+	&__request-link
+		transition: color .3s
+		color: currentColor
+		display: block
+		+hover
+			color: $red
 
-.input input
-	padding: 5px 20px
-	height: 48px
-	width: 100%
-	+fgp
-	color: $black
-	caret-color: $red
-	+f(14px,400,1.24)
-	border: 1px solid $lightGray
-	border-radius: 4px
-	background-color: transparent
-	display: inline-block
-	&::placeholder
-		color: $gray
+.input 
+	position: relative
+	&.is-error input
+		padding-right: 35px
+		border-color: $red
+	input
+		padding: 5px 20px
+		height: 48px
+		width: 100%
+		+fgp
+		color: $black
+		caret-color: $red
+		+f(14px,400,1.24)
+		border: 1px solid $lightGray
+		border-radius: 4px
+		background-color: transparent
+		display: inline-block
+		&::placeholder
+			color: $gray
+	.icon-danger
+		position: absolute
+		top: 50%
+		margin-top: -9px
+		right: 16px
+		font-size: 18px
+		color: $red

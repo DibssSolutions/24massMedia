@@ -29,19 +29,6 @@
 <!-- end input -->
 {% endmacro %}
 
-{% macro searchSimple(props) %}
-<!-- begin search-simple -->
-<div class="search-simple">
-	<button class="search-simple__btn" type="submit">
-		{{ icon('search') }}
-	</button>
-	<div class="search-simple__control">
-		<input type="text" placeholder="Кто вас интересует?">
-	</div>
-</div>
-<!-- end search-simple -->
-{% endmacro %}
-
 {% macro card(props) %}
 <!-- begin card -->
 <div class="card{% if props.class %} {{ props.class }}{% endif %}">
@@ -101,4 +88,114 @@
 	<a href="#" class="card-simple__title">{{ props.title | safe }}</a>
 </div>
 <!-- end card -->
+{% endmacro %}
+
+{% macro search(props) %}
+<!-- begin search -->
+<form action="/" class="search">
+	<div class="search__icon">
+		{{ icon('search') }}
+	</div>
+	<div class="search__control">
+		<div class="input">
+			<input type="text" placeholder="Кто вас интересует?">
+		</div>
+	</div>
+	<button class="search__submit btn-simple" type="submit">Найти{{ icon('search', 'mobile-show') }}</button>
+	{% if props.results %}
+	<div class="search__results">
+		<div class="search__head">
+		{% for item in [
+			{
+				img: 'celebrities-slider-img-1.png',
+				title: 'Брэд Питт',
+				profession: 'Актёр, кинопродюсер'
+			},
+			{
+				img: 'celebrities-slider-img-2.png',
+				title: 'Стивен Спилберг',
+				profession: 'Кинорежиссёр, сценарист'
+			}
+		] %}
+		<div class="search__field">
+			<!-- begin celebrity -->
+			<a href="#" class="celebrity celebrity_xs-full">
+				<div class="celebrity__img" style="background-image: url(./img/{{ item.img }});"></div>
+				<div class="celebrity__content">
+					<div class="celebrity__title title-sm">{{ item.title }}</div>
+					<div class="celebrity__profession">{{ item.profession }}</div>
+				</div>
+			</a>
+			<!-- end celebrity -->
+		</div>	
+		{% endfor %}
+		</div>
+		<div class="search__footer">
+			<div class="search__history">
+				<div class="search__label">Последние запросы</div>
+				<button class="search__clear-btn" type="button">очистить</button>
+			</div>
+			{% for text in ['Сергей Безруков','Джон Траволта','Умма Турман'] %}
+			<div class="search__request">
+				<a href="#" class="search__request-link">{{ text }}</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</form>
+<!-- end search -->
+{% endmacro %}
+{% macro searchSimple(props) %}
+<!-- begin search-simple -->
+<div class="search-simple">
+	<button class="search-simple__btn" type="submit">
+		{{ icon('search') }}
+	</button>
+	<div class="search-simple__control">
+		<input type="text" placeholder="Кто вас интересует?">
+	</div>
+	{% if props.results %}
+	<div class="search-simple__results">
+		<div class="search-simple__head">
+		{% for item in [
+			{
+				img: 'celebrities-slider-img-1.png',
+				title: 'Брэд Питт',
+				profession: 'Актёр, кинопродюсер'
+			},
+			{
+				img: 'celebrities-slider-img-2.png',
+				title: 'Стивен Спилберг',
+				profession: 'Кинорежиссёр, сценарист'
+			}
+		] %}
+		<div class="search-simple__field">
+			<!-- begin celebrity -->
+			<a href="#" class="celebrity celebrity_xs-full">
+				<div class="celebrity__img" style="background-image: url(./img/{{ item.img }});"></div>
+				<div class="celebrity__content">
+					<div class="celebrity__title title-sm">{{ item.title }}</div>
+					<div class="celebrity__profession">{{ item.profession }}</div>
+				</div>
+			</a>
+			<!-- end celebrity -->
+		</div>	
+		{% endfor %}
+		</div>
+		<div class="search-simple__footer">
+			<div class="search-simple__history">
+				<div class="search-simple__label">Последние запросы</div>
+				<button class="search-simple__clear-btn" type="button">очистить</button>
+			</div>
+			{% for text in ['Сергей Безруков','Джон Траволта','Умма Турман'] %}
+			<div class="search-simple__request">
+				<a href="#" class="search-simple__request-link">{{ text }}</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</div>
+<!-- end search-simple -->
 {% endmacro %}

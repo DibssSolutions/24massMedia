@@ -148,7 +148,6 @@ let mobSliderOption = {
 const tabletSlider = $('[data-tablet-slider]');
 
 const initStripSlider = (container, option, widht) => {
-  console.log(mediaWidth(widht));
   if (mediaWidth(widht)) {
     if (container.hasClass('slick-initialized')) return;
     container.slick(option);

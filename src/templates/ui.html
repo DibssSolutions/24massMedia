@@ -1,0 +1,207 @@
+---
+title: UI
+---
+{% extends 'layouts/_layout.html' %}
+
+{% block content %}
+	
+	{{ header.block({ noveltyActive: true }) }}
+	<div class="inner ui">
+		{{ mixins.breadcrumbs({
+				list: ['Главная', 'Page', 'Page']
+			}) }}
+		<h3>Buttons</h3>
+		<h4>.btn-simple</h4>
+		<div class="row">
+			<div class="col-6">
+				<h5>default</h5>
+				<button class="btn-simple" type="button">Text</button>
+			</div>
+			<div class="col-6">
+				<h5>disabled</h5>
+				<button class="btn-simple" type="button" disabled>Text</button>
+			</div>
+		</div>
+		<h5>btn-simple_full</h5>
+		<div class="row">
+			<div class="col">
+				<button class="btn-simple btn-simple_full" type="button">Text</button>
+			</div>
+		</div>
+		<h4>.btn</h4>
+		<div class="row">
+			<div class="col-6">
+				<h5>default</h5>
+				<button class="btn" type="button">Text</button>
+			</div>
+			<div class="col-6">
+				<h5>disabled</h5>
+				<button class="btn" type="button" disabled>Text</button>
+			</div>
+		</div>
+		<h5>btn_full</h5>
+		<div class="row">
+			<div class="col">
+				<button class="btn btn_full" type="button">Text</button>
+			</div>
+		</div>
+		<h3>link</h3>
+		<div class="row">
+			<div class="col-6">
+				<h5>default</h5>
+				<a href="#" class="link">
+					<span class="link__text">Text</span>
+					<svg class="icon icon-arrow-right link__icon">
+						<use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="col-6">
+				<h5>disabled</h5>
+				<button class="link" disabled>
+					<span class="link__text">Text</span>
+					<svg class="icon icon-arrow-right link__icon">
+						<use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<h3>copycontrol</h3>
+		<div class="row">
+			<div class="col">
+				<!-- begin copycontrol -->
+				<div class="copycontrol">
+					<div class="input"><input type="text" value="https://24smi.org/news/134113-brien" readonly></div>
+					<button class="copycontrol__btn" type="button">
+						<span class="icon-copy">
+							<span class="icon-copy__top"></span>
+							<span class="icon-copy__bottom"></span>
+						</span>
+					</button>
+				</div>
+				<!-- end copycontrol -->
+			</div>
+		</div>
+		<h3>pagination</h3>
+		<div class="row">
+			<div class="col">
+				<div class="pagination">
+					<a href="#" class="pagination__prev">{{ mixins.icon("sm-arrow-left") }}</a>
+					<ul class="pagination__list">
+						{% for item in [
+							{
+								text: 1
+							},
+							{
+								span: true,
+								text: '...'
+							},
+							{
+								active: true,
+								text: 3
+							},
+							{
+								text: 4
+							},
+							{
+								text: 5
+							},
+							{
+								text: 6
+							},
+							{
+								text: 7
+							},
+							{
+								span: true,
+								text: '...'
+							},
+							{
+								text: 14
+							}
+						] %}
+						{% if item.span %}
+							<li><span>{{ item.text }}</span></li>
+						{% else %}
+						    <li><a {% if item.active %}class="is-active"{% endif %} href="#">{{ item.text }}</a></li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+					<a href="#" class="pagination__next">{{ mixins.icon("sm-arrow-right") }}</a>
+				</div>
+			</div>
+		</div>
+		<h3>soc</h3>
+		<div class="row">
+			<div class="col-12" style="margin-bottom: 20px;">
+				<!-- begin soc -->
+				<div class="soc">
+					<ul class="soc__list">
+						{% for icon in ['vk', 'tel', 'tw', 'youtube', 'inst'] %}
+						    <li class="soc__item">
+						    	<a href="#">
+							    	{{ mixins.icon(icon) }}
+							    </a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<!-- end soc -->
+			</div>
+			<div class="col-4">
+				<h5>soc & description</h5>
+				<!-- begin soc -->
+				<div class="soc">
+					<div class="soc__description">Мы в соцсетях:</div>
+					<ul class="soc__list">
+						{% for icon in ['vk', 'tel', 'tw', 'youtube', 'inst'] %}
+						    <li class="soc__item">
+						    	<a href="#">
+							    	{{ mixins.icon(icon) }}
+							    </a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<!-- end soc -->
+			</div>
+		</div>
+		<h3>Inputs</h3>
+		<div class="row">
+			<div class="col-6">
+				<div class="form-control">
+					<div class="input">
+						<input type="text" placeholder="Placeholder">
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-control">
+					<div class="input is-error">
+						<input type="text" placeholder="Placeholder" value="Some text">
+						{{ mixins.icon('danger') }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3>search</h3>
+		<div class="row" style="padding-bottom: 400px;">
+			<div class="col-6">{{mixins.search()}}</div>
+			<div class="col-6">{{mixins.search({results: true})}}</div>
+		</div>
+		<h3>search-simple</h3>
+		<div class="row" style="padding-bottom: 400px;">
+			<div class="col-6">{{mixins.searchSimple()}}</div>
+			<div class="col-6">{{mixins.searchSimple({results: true})}}</div>
+		</div>
+		<h3></h3>
+		<div class="row">
+			<div class="col"></div>
+		</div>
+		<h3></h3>
+		<div class="row">
+			<div class="col"></div>
+		</div>
+	</div>
+
+{% endblock %}

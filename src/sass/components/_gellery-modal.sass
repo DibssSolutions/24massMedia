@@ -1,0 +1,57 @@
+.gellery-modal
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	min-width: 320px
+	height: 100%
+	z-index: 101
+	padding: 24px
+	overflow: auto
+	+fadeout(.3s)
+	align-items: center
+	justify-content: center
+	display: flex
+	background-color: rgba(#2A2A2C, .32)
+	+sm
+		padding: 0
+	&.is-open
+		+fadein
+	.gallery-slider-wrap
+		margin-bottom: 16px
+		+sm
+			margin: 0
+	.gallery-nav
+		+sm
+			display: none
+	&__inner
+		width: 100%
+		max-width: 992px
+	&__wrap
+		padding: 16px 16px 0
+		box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.16)
+		border-radius: 4px
+		overflow: hidden
+		background-color: $white
+		+sm
+			padding: 0
+			border-radius: 0
+	&__btn
+		margin: 0 -16px
+		padding: 10px
+		min-width: calc(100% + 32px)
+		+fos
+		+f(14px,600,1.43)
+		border-top: 1px solid #EDEDF4
+		text-align: center
+		transition: background-color .3s
+		background-color: #F6F8F9
+		display: block
+		+sm
+			display: none
+		+hover
+			.gellery-modal__btn-text
+				border-color: transparent
+	&__btn-text
+		transition: border-color .3s
+		border-bottom: 1px dashed #CFCFD9

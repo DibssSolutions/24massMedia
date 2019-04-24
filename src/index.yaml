@@ -9,9 +9,17 @@ PageList:
   ready: 100
 - file: persons.html
   ready: 100
+- file: persons-search.html
+  ready: 100
+- file: persons-search-tag.html
+  ready: 100
 - file: card.html
   ready: 100
 - file: photo.html
+  ready: 100
+- file: photo-open-gellery.html
+  ready: 100
+- file: ui.html
   ready: 100
 - file: typical-page.html
   ready: 50

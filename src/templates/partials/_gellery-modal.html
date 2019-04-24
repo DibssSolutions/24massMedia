@@ -1,0 +1,67 @@
+<!-- begin gellery-modal -->
+<div class="gellery-modal is-open js-gellery-modal">
+	<div class="gellery-modal__inner js-gellery-modal-inner">
+		<div class="gellery-modal__wrap">
+			<!-- begin gallery-slider-wrap -->
+			<div class="gallery-slider-wrap js-gallery-slider-wrap">
+				<button class="gallery-slider-prev js-gallery-slider-prev" type="butoon">{{ mixins.icon('arrow-right-lg')}}</button>
+				<button class="gallery-slider-next js-gallery-slider-next" type="butoon">{{ mixins.icon('arrow-right-lg')}}</button>
+				<!-- begin gallery-slider -->
+				<div class="gallery-slider js-gallery-slider">
+					{% for slide in [
+						{
+							img: 'acticle-img-1.jpg',
+							title: 'Бриена Тарт, “Афиша Daily”'
+						},
+						{
+							img: 'acticle-img-1.jpg',
+							title: 'Бриена Тарт, “Афиша Daily”'
+						},
+						{
+							img: 'acticle-img-1.jpg',
+							title: 'Бриена Тарт, “Афиша Daily”'
+						},
+						{
+							img: 'acticle-img-1.jpg',
+							title: 'Бриена Тарт, “Афиша Daily”'
+						},
+						{
+							img: 'acticle-img-1.jpg',
+							title: 'Бриена Тарт, “Афиша Daily”'
+						},
+						{
+							img: 'acticle-img-1.jpg',
+							title: 'Бриена Тарт, “Афиша Daily”'
+						}
+					] %}
+					<div class="gallery-slider__slide js-gallery-slider-slide">
+						<img src="./img/{{ slide.img }}" alt="img">
+						<div class="gallery-slider__footer">
+							<div class="gallery-slider__length">
+								<span class="gallery-slider__current js-gallery-slider-current"></span> из
+								<span class="gallery-slider__all js-gallery-slider-all"></span>
+							</div>
+							<div class="gallery-slider__title">{{ slide.title }}</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- end gallery-slider -->
+				<!-- begin gallery-slider -->
+				<div class="gallery-nav js-gallery-nav">
+					{% for img in ['gallery-nav-1.jpg','gallery-nav-2.jpg','gallery-nav-3.jpg','gallery-nav-4.jpg','gallery-nav-5.jpg','gallery-nav-3.jpg'] %}
+					<div class="gallery-nav__slide">
+						<img src="./img/{{ img }}" alt="img">
+					</div>
+					{% endfor %}
+				</div>
+				<!-- end gallery-slider -->
+			</div>
+			<!-- end gallery-slider-wrap -->
+			<button class="gellery-modal__btn js-gellery-modal-btn" type="button" data-text-hide="Развернуть" data-text-show="Свернуть">
+				<span class="gellery-modal__btn-text js-gellery-modal-btn-text">Свернуть</span>
+			</button>
+		</div>
+	</div>
+</div>
+<!-- end gellery-modal -->

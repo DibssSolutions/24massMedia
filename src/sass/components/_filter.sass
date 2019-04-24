@@ -17,6 +17,29 @@
 	&__description
 		+md
 			margin-top: 7px
+	&__tags
+		margin-left: 5px
+		color: $black
+		display: inline-block
+	&__tags-close
+		position: relative
+		margin-left: 15px
+		+circle(24)
+		font-size: 0
+		line-height: 1
+		vertical-align: middle
+		background-color: #F6F8F9
+		display: inline-block
+		+hover
+			.icon
+				color: $red
+		.icon
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			font-size: 8px
+			transition: color .3s
 
 .text-control
 	align-items: center

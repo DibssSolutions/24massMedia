@@ -51,7 +51,7 @@ article
 			margin-top: 28px
 		&:not(:last-child)
 			margin-bottom: 24px
-	a
+	a:not(.link)
 		font-weight: 600
 		border-bottom: 1px solid #CFCFD9
 		+hover
@@ -60,7 +60,8 @@ article
 			color: currentColor
 			transition: border-color .3s
 	.card-sm a,
-	a.card-sm
+	a.card-sm,
+	.link
 		border: none
 	&__wind
 		&:not(:first-child)

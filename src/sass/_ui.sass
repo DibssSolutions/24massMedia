@@ -111,6 +111,24 @@
 	&:active
 		&:before
 			background-color: rgba($red, .2)
+	&:disabled
+		color: #A9A9B2
+		cursor: default
+		&:before
+			background-color: #F6F8FC
+		&:after
+			background-color: #A9A9B2
+		.link__icon
+			color: #A9A9B2
+		+hover
+			&:before
+				right: 100%
+			&:after
+				right: 100%
+				opacity: 1
+				transform: scale(1)
+			.link__icon
+				transform: translateX(-12px) scale(0)
 	&_white
 		&:before
 			background-color: $white
@@ -471,3 +489,28 @@
 		border-bottom: 1px dashed #CFCFD9
 		+hover
 			border-color: transparent
+
+.ui
+	h3
+		&:not(:first-child)
+			margin-top: 48px
+			+sm
+				margin-top: 32px
+		&:not(:last-child)
+			margin-bottom: 32px
+			+sm
+				margin-bottom: 14px
+		+md
+			font-size: 20px
+		+sm
+			font-size: 18px
+	h2
+		font-size: 24px
+		+md
+			font-size: 20px
+	h4,
+	h5
+		&:not(:first-child)
+			margin-top: 28px
+		&:not(:last-child)
+			margin-bottom: 24px

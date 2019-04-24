@@ -19,10 +19,20 @@
 	width: 80px
 	color: $white
 	opacity: 0.8
+	transition: opacity .3s, visibility .3s
 	background: linear-gradient(90deg, rgba(42, 42, 44, 0) 50%, #2A2A2C 150%)
 	+hover
 		.icon
 			opacity: 1
+	.is-hide-arrow &
+		opacity: 0
+		visibility: hidden
+	.gellery-modal &
+		opacity: 0
+		visibility: hidden
+	.is-show-arrow &
+		+fadein
+
 	.icon
 		position: absolute
 		top: 50%
@@ -44,6 +54,7 @@
 	white-space: nowrap
 	+fadeout(.3s)
 	+clr
+	background-color: #CFCFD9
 	+sm
 		+f(12px,400,1.67)
 	&.slick-initialized
@@ -151,17 +162,23 @@
 				svg
 					opacity: 1
 		svg
+			position: absolute
+			top: 50%
+			margin-top: -12px
 			opacity: 0.4
 			transition: opacity .3s
 	&__prev
 		left: 0
 		background: linear-gradient(-90deg, rgba(42, 42, 44, 0) 0%, #2A2A2C 100%)
 		svg
+			left: 24px
 			+rotate(180)
 	&__next
 		position: absolute
 		right: 0
 		background: linear-gradient(90deg, rgba(42, 42, 44, 0) 0%, #2A2A2C 100%)
+		svg
+			right: 24px
 
 [data-mob-slider]
 	+sm
