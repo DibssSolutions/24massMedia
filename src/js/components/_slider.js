@@ -158,11 +158,11 @@ const initStripSlider = (container, option, widht) => {
   }
 };
 
-initStripSlider(stripSlider, stripSliderOption, 1024);
+initStripSlider(stripSlider, stripSliderOption, 1023);
 initStripSlider(mobSlider, mobSliderOption, 767);
 let tabletSliderOption = mobSliderOption;
 tabletSliderOption.dots = false;
-initStripSlider(tabletSlider, tabletSliderOption, 1024);
+initStripSlider(tabletSlider, tabletSliderOption, 1023);
 
 const mobImagesSlider = $('.js-images-mob-slider');
 const arrowIcon = `<svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,14 +176,32 @@ let mobImagesSliderOption = {
 };
 initStripSlider(mobImagesSlider, mobImagesSliderOption, 767);
 
+const mobMenuTabletSlider = $('.js-menu-tablet-slider');
+const mobMenuTabletSliderOption = {
+  slidesToShow: 2,
+  arrows: false,
+  dots: false,
+  // centerMode: true,
+  infinite: true,
+  variableWidth: true,
+  responsive: [{
+    breakpoint: 479,
+    settings: {
+      slidesToShow: 1
+    }
+  }]
+};
+initStripSlider(mobMenuTabletSlider, mobMenuTabletSliderOption, 1023);
+
 let timeout;
 WIN.on('resize', () => {
   clearTimeout(timeout);
   timeout = setTimeout( () => {
-    initStripSlider(stripSlider, stripSliderOption, 1024);
-    initStripSlider(tabletSlider, tabletSliderOption, 1024);
+    initStripSlider(stripSlider, stripSliderOption, 1023);
+    initStripSlider(tabletSlider, tabletSliderOption, 1023);
     initStripSlider(mobSlider, mobSliderOption, 767);
     initStripSlider(mobImagesSlider, mobImagesSliderOption, 429);
+    initStripSlider(mobMenuTabletSlider, mobMenuTabletSliderOption, 1023);
   }, 200);
 });
 

@@ -70,7 +70,7 @@ title: Persons
 		<div class="persons__inner inner">
 			<!-- begin menu -->
 			<div class="persons__menu">
-				<ul class="menu">
+				<ul class="menu js-menu-tablet-slider">
 					{% for item in [
 						{
 							title: 'Известные личности'
@@ -98,12 +98,12 @@ title: Persons
 					] %}
 					<li class="menu__item">
 						{% if loop.last %}
-						<button class="menu__btn js-nav-btn" type="button">{{ item.title }}<span class="menu__btn-points"></span></button>
+						<button class="menu__btn js-nav-link" type="button">{{ item.title }}<span class="menu__btn-points"></span></button>
 						{% else %}
-						<a href="#" class="menu__link">{{ item.title }}</a>
+						<a href="#" class="menu__link js-nav-link">{{ item.title }}</a>
 						{% endif %}
 						{% if item.list %}
-						<ul class="menu__list">
+						<ul class="menu__list js-menu-list">
 							{% for text in item.list %}
 							    <li><a href="#">{{ text }}</a></li>
 							{% endfor %}

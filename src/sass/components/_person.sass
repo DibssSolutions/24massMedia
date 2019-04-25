@@ -20,7 +20,8 @@
 		z-index: 3
 		margin-bottom: 48px
 		+md
-			margin-bottom: 36px
+			margin: 0 -24px 36px
+			padding-left: 24px
 			&:before,
 			&:after
 				position: absolute
@@ -93,26 +94,27 @@
 	+lg
 		padding: 28px 20px
 	+md
-		white-space: nowrap
 		font-size: 14px
-		overflow-x: auto
+		// overflow-x: auto
 		display: block
 	+sm
 		padding: 23px 20px
 		font-size: 13px
+	.slick-list
+		+md
+			overflow: visible !important
 	&__item
 		position: relative
 		+md
+			padding-right: 40px
 			vertical-align: top
 			display: inline-block
+		+sm
+			padding-right: 36px
 		&:not(:first-child)
 			margin-left: 33px
 			+lg
 				margin-left: 12px
-			+md
-				margin-left: 40px
-			+sm
-				margin-left: 36px
 		+hover
 			.menu__link
 				color: $red
@@ -165,8 +167,6 @@
 		transition: color .3s ease-in-out
 		+f(14px,600,1.43)
 		background-color: transparent
-		+md
-			display: none
 		+hover
 			color: $red
 			.menu__btn-points
@@ -213,37 +213,42 @@
 		width: 410px
 		font-weight: 400
 		+fadeout(.3s)
+		max-height: 408px
+		overflow-y: auto
 		border-radius: 4px
 		box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.16)
 		background-color: $white
-		+md
-			display: none
-			position: relative
-			top: 0
-			right: auto
-			width: auto
-			margin-top: 0
-			padding: 0
-			+fadein
-			border-radius: 0
-			box-shadow: none
-			background-color: transparent
+		&::-webkit-scrollbar
+			width: 4px
+		&::-webkit-scrollbar-track
+			-webkit-box-shadow: none
+		&::-webkit-scrollbar-thumb
+			background-color: $red
+			border-radius: 2px
+			outline: none
+		.is-open &
+			+md
+				+fadein
+		+sm
+			margin-top: 24px
+			left: 20px
+			padding: 25px 20px
+			width: 256px
+			max-height: 288px
 		.menu__item:last-child &
 			left: auto
 			right: -10px
 			+md
 				display: block
+			+sm
+				left: 0
+				right: auto
 		li
 			display: block
-			+md
-				vertical-align: top
-				display: inline-block
 			&:not(:last-child)
 				margin-bottom: 20px
-				+md
-					margin: 0 40px 0 0
 				+sm
-					margin-right: 36px
+					margin-bottom: 15px
 		a
 			color: currentColor
 			transition: color .3s
