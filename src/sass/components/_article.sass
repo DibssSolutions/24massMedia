@@ -6,7 +6,7 @@ article
 		+f(16px,400,1.75)
 	+sm
 		+f(14px,400,1.71)
-	p
+	& > p
 		&:not(:last-child)
 			margin-bottom: 24px
 			+sm
@@ -45,6 +45,9 @@ article
 		font-size: 24px
 		+md
 			font-size: 20px
+	h4
+		text-transform: uppercase
+		+f(16px,600,1.5)
 	h4,
 	h5
 		&:not(:first-child)
@@ -59,6 +62,86 @@ article
 		&:not([class*="btn"])
 			color: currentColor
 			transition: border-color .3s
+		&.link-dashed
+			border-style: dashed
+	ul,
+	ol
+		&:not(:first-child)
+			margin-top: 56px
+			+sm
+				margin-top: 38px
+		&:not(:last-child)
+			margin-bottom: 56px
+			+sm
+				margin-bottom: 38px
+		li
+			display: block
+			&:not(:first-child)
+				margin-top: 24px
+			&:before
+				margin-right: 4px
+	ul
+		li
+			display: block
+			&:before
+				content: '—'
+		ul
+			padding-left: 40px
+			margin-top: 24px
+	ol
+		counter-reset: list
+		li
+			&:before
+				margin-right: 4px
+				counter-increment: list
+				content: counter(list) ". "
+	table
+		overflow-x: auto
+		min-width: 760px
+		line-height: 1.58
+		font-size: 14px
+		table-layout: fixed
+		&:not(:first-child)
+			margin-top: 56px
+			+sm
+				margin-top: 38px
+		&:not(:last-child)
+			margin-bottom: 56px
+			+sm
+				margin-bottom: 38px
+		th,
+		td
+			padding: 14px 20px
+			text-align: left
+			vertical-align: top
+		th,
+		strong
+			font-weight: 600
+			letter-spacing: 0.03em
+		thead
+			th
+				border-top: 1px solid #EDEDF4
+		tbody
+			tr
+				&:nth-child(odd)
+					td
+						background-color: #F9F9FB
+						.table_vertical &
+							background-color: transparent
+		&.table_vertical
+			tbody
+				tr
+					&:first-child
+						td
+							border-top: 1px solid #EDEDF4
+					&:nth-child(odd)
+						td
+							background-color: transparent
+					td
+						border-bottom: 1px solid #EDEDF4
+						&:nth-child(odd)
+							background-color: #F9F9FB
+
 	.card-sm a,
 	a.card-sm,
 	.link
@@ -66,6 +149,77 @@ article
 	&__wind
 		&:not(:first-child)
 			margin-top: 44px
+	&__row
+		align-items: flex-start
+		display: flex
+		p
+			flex-grow: 1
+		.info-block
+			flex-shrink: 0
+
+.table-wrap
+	overflow-x: auto
+	max-width: 100%
+	width: 100%
+blockquote
+	position: relative
+	text-align: center
+	padding: 40px 70px
+	+f(20px,700,1.4)
+	background: linear-gradient(0deg, #F6F8F9, #F6F8F9)
+	+sm
+		padding: 30px 40px
+		+f(16px,700,1.4)
+	&:before
+		position: absolute
+		content: ''
+		top: 30px
+		left: -24px
+		width: 80px
+		height: 52px
+		background-image: url(../img/text-quotes.svg)
+		background-repeat: no-repeat
+		background-size: contain
+		background-repeat: no-repeat
+		+sm
+			width: 50px
+			height: 30px
+			left: -10px
+	&:not(:first-child)
+		margin-top: 64px
+		+sm
+			margin-top: 38px
+	&:not(:last-child)
+		margin-bottom: 64px
+		+sm
+			margin-bottom: 38px
+
+.info-block
+	float: right
+	width: 253px
+	margin-left: 80px
+	padding-left: 36px
+	border-left: 4px solid #F6F8F9
+	h5
+		margin-bottom: 16px
+	p
+		color: #A9A9B2
+		font-size: 14px
+	img
+		max-height: 88px
+		max-width: 100%
+		display: block
+		&:not(:last-child)
+			margin-bottom: 24px
+
+.head-inf
+	+f(20px,600,1.8)
+	+sm
+		font-size: 16px
+	&:not(:last-child)
+		margin-bottom: 48px
+		+sm
+			margin-bottom: 38px
 
 .article-footer
 	margin-top: 67px
