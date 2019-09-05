@@ -49,7 +49,7 @@
 	&_full
 		width: 100%
 	&_sm
-		padding: 7px 15px 5px
+		padding: 6px 17px
 		font-size: 12px
 		min-width: 0
 		font-weight: 600
@@ -60,12 +60,14 @@
 		background-color: $white
 		+hover
 			background-color: darken($white, 15%)
+	&_os
+		+fos
 .btn-sm
 	padding: 8px 12px
 	min-width: 146px
 	color: #1D50DE
 	+fos
-	+f(14px,500,1.43)
+	+f(14px,600,1.43)
 	text-align: center
 	border-radius: 3px
 	transition: background-color .3s, color .3s
@@ -76,3 +78,10 @@
 	+hover
 		color: $white
 		background-color: #1D50DE
+	.red-theme &
+		border-color: #C82525
+		color: #C82525
+.red-theme.no-touch
+	.btn-sm
+		&:hover
+			background-color: #C82525

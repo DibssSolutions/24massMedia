@@ -1,0 +1,28 @@
+<!-- begin header -->
+<header class="header header_glavnoe js-header">
+	<div class="header__inner inner-sm">
+		<button class="btn-nav js-btn-nav" type="button">
+			<span class="btn-nav__line"></span>
+			<span class="btn-nav__line"></span>
+			<span class="btn-nav__line"></span>
+		</button>
+		<!-- begin logo -->
+		<a href="/" class="logo">
+			<h1 class="logo__hide">24сми</h1>
+			<img src="./img/logo-glavnoe.svg" alt="logo">
+		</a>
+		<!-- end logo -->
+		<!-- begin nav -->
+		<div class="nav nav_glavnoe js-nav">
+			<ul class="nav__list">
+				{% for text in ['ПОЛИТИКА', 'oБЩЕСТВО', 'ПРОИСШЕСТВИЯ', 'НАУКА', 'ШОУ-БИЗНЕС', 'ЛАЙФ'] %}
+				<li class="nav__item">
+					<a href="#" class="nav__link{% if loop.first %} is-active{% endif %}">{{ text }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<!-- end nav -->
+	</div>
+</header>
+<!-- end header -->

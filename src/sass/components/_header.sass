@@ -17,6 +17,10 @@
 		padding: 15px 0
 		+sm
 			padding: 21px 0
+	&_glavnoe
+		padding: 18px 0 17px
+		+sm
+			padding: 21px 0
 	.is-open-menu &
 		+md
 			left: calc(100% - 68px)
@@ -42,7 +46,8 @@
 		display: block
 	&__hide
 		display: none
-	.header_mod &
+	.header_mod &,
+	.header_glavnoe &
 		+md
 			margin: auto
 
@@ -81,6 +86,16 @@
 	align-items: center
 	flex-wrap: wrap
 	display: flex
+	&_mod
+		margin-right: 0
+	&_glavnoe
+		margin-right: auto
+		margin-left: 54px
+		text-transform: uppercase
+		+fos
+		font-size: 14px
+		font-weight: 600
+		color: #B6B6B6
 	+md
 		position: absolute
 		top: 0
@@ -161,17 +176,22 @@
 				margin-left: 27px
 				+md
 					margin: 25px 0 0 
+			.nav_glavnoe &
+				margin-left: 43px
+				+md
+					margin: 25px 0 0 
 	&__link
 		position: relative
 		padding: 0 8px
-		transition: color .3s ease-in-out
+		transition: color .3s ease-in-out, font-weight .3s ease-in-out
 		color: currentColor
 		display: block
 		+md
 			padding: 0
 		+hover
 			color: $red
-		.nav_mod &
+		.nav_mod &,
+		.nav_glavnoe &
 			+hover
 				color: #333
 		&:before
@@ -185,6 +205,9 @@
 			height: 1px
 			+fadeout(.3s)
 			background-color: $red
+			.nav_glavnoe &
+				margin-top: 13px
+				height: 4px
 		&:after
 			position: absolute
 			content: ''
@@ -199,6 +222,8 @@
 			font-size: 14px
 			line-height: 1.35
 			color: #B6B6B6
+		.nav_glavnoe &
+			padding: 0
 		&.is-active
 			color: $red
 			&:before
@@ -207,8 +232,20 @@
 					display: none
 			.nav_mod &
 				color: #1D50DE
+				+hover
+					font-weight: 700
+					color: #1D50DE
 				&:before
 					display: none
+			.nav_glavnoe &
+				color: #333
+				+md
+					color: $red
+			.red-theme &
+				color: #C82525
+			.red-theme.no-touch &
+				&:hover
+					color: #C82525 !important
 
 	&__btn
 		position: relative

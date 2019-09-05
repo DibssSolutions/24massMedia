@@ -19,6 +19,10 @@
 		.assessment
 			&:not(:last-child)
 				margin-bottom: 40px
+		&_auto
+			flex: 0 0 auto
+			max-width: 14.003%
+			min-width: 115px
 	&__sidebar
 		padding: 0 16px
 		+fs(28.572%)
@@ -343,13 +347,17 @@
 		color: #2059F6
 		vertical-align: top
 		transition: color .3s
-		+hover
+		.red-theme &
 			color: #C82525
 a.simplenews__title
 	color: #1B1B1B
 	transition: color .3s
 	+hover
-		color: #C82525
+		color: #2059F6
+.red-theme.no-touch
+	a.simplenews__title
+		&:hover
+			color: #C82525
 
 .readtitle
 	padding-bottom: 10px
@@ -381,11 +389,16 @@ a.simplenews__title
 			display: inline-block
 			+sm
 				top: 17px
+			.red-theme &
+				background: #C82525
 	a
 		color: #333
 		transition: color .3s
 		+hover
 			color: #1D50DE
+		.red-theme.no-touch &
+			&:hover
+				color: #C82525
 .constnews
 	margin-top: 60px
 	+sm

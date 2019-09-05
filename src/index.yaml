@@ -27,3 +27,7 @@ PageList:
   ready: 100
 - file: constructor2.html
   ready: 100
+- file: constructor-glavnoe.html
+  ready: 100
+- file: constructor-red.html
+  ready: 100

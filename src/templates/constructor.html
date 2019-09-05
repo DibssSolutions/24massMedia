@@ -29,7 +29,7 @@ classBody: is-constructor
 						</div>
 					</div>
 					<div class="assessment">
-						<div class="assessment__text">Оценить<span class="assessment__numb">+123</span></div>
+						<div class="assessment__text">Оценить <span class="assessment__numb">+123</span></div>
 						<div class="assessment__list">
 							<li><a href="#">{{ mixins.icon('like') }}</a></li>
 							<li><a href="#">{{ mixins.icon('dislike') }}</a></li>
@@ -235,7 +235,7 @@ classBody: is-constructor
 										<div class="newsbanner__title"> Приюти котика в самом милом приюте на свете, пока это не сделали за тебя </div>
 									</div>
 									<div class="newsbanner__bns">
-										<a href="#" class="btn-simple btn-simple_sm btn-simple_white">Подробнее</a>
+										<a href="#" class="btn-simple btn-simple_sm btn-simple_white btn-simple_os">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -267,94 +267,97 @@ classBody: is-constructor
 	<div class="featured-materials">
 		<div class="inner-xs">
 			<h5 class="readtitle">Рекомендованные материалы</h5>
-			<div class="featured-slider js-featured-slider">
-				{% for item in range(0,3) %}
-				    <div class="featured-slider__slide">
-				    	<div class="featured-slider__row row-flex">
-				    		<div class="featured-slider__col col-3 col-md-4 col-sm-12">
-				    			<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
-				    				<div class="vertcard__head">
-				    					<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    				</div>
-				    				<div class="vertcard__footer">
-				    					<a href="#" class="vertcard__edition">RBK.RU</a>
-				    					<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
-				    				</div>
-				    			</div>
-				    		</div>
-				    		<div class="featured-slider__col col-3 col-md-4 col-sm-12">
-				    			<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
-				    				<div class="vertcard__head">
-				    					<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    				</div>
-				    				<div class="vertcard__footer">
-				    					<a href="#" class="vertcard__edition">RBK.RU</a>
-				    					<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
-				    				</div>
-				    			</div>
-				    		</div>
-				    		<div class="featured-slider__col col-3 col-md-4 mobile-hide">
-				    			<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
-				    				<div class="vertcard__head">
-				    					<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    				</div>
-				    				<div class="vertcard__footer">
-				    					<a href="#" class="vertcard__edition">RBK.RU</a>
-				    					<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
-				    				</div>
-				    			</div>
-				    		</div>
-				    		<div class="featured-slider__col col-3 tablet-hide">
-				    			<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
-				    				<div class="vertcard__head">
-				    					<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    				</div>
-				    				<div class="vertcard__footer">
-				    					<a href="#" class="vertcard__edition">RBK.RU</a>
-				    					<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
-				    				</div>
-				    			</div>
-				    		</div>
-				    		<div class="featured-slider__col col-3 col-md-4 mobile-hide">
-				    			<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
-				    				<div class="vertcard__head">
-				    					<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    				</div>
-				    				<div class="vertcard__footer">
-				    					<a href="#" class="vertcard__edition">RBK.RU</a>
-				    					<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
-				    				</div>
-				    			</div>
-				    		</div>
-				    		<div class="featured-slider__col col-6 col-md-8 col-sm-12">
-				    			<div class="longcard longcard_high">
-				    				<div class="longcard__wrap" style="box-shadow: 0 0 15px 15px #566B82; background: #566B82;">
-				    					<div class="longcard__head">
-				    						<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    					</div>
-				    					<div class="longcard__footer" style="box-shadow: 0 0 15px 15px #566B82; background: #566B82;">
-				    						<a href="#" class="longcard__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, temporibus!</a>
-				    					</div>
-				    				</div>
-				    				<div class="longcard__img">
-				    					<img src="https://picsum.photos/310/214" alt="img">
-				    				</div>
-				    			</div>
-				    		</div>
-				    		<div class="featured-slider__col col-3 tablet-hide">
-				    			<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
-				    				<div class="vertcard__head">
-				    					<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
-				    				</div>
-				    				<div class="vertcard__footer">
-				    					<a href="#" class="vertcard__edition">RBK.RU</a>
-				    					<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
-				    				</div>
-				    			</div>
-				    		</div>
-				    	</div>
-				    </div>
-				{% endfor %}
+			<div class="featured-slider">
+				<div class="featured-slider__slide">
+					<div class="featured-slider__row row-flex">
+						<div class="featured-slider__col col-3 col-md-4 col-sm-12">
+							<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
+								<div class="vertcard__head">
+									<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+								</div>
+								<div class="vertcard__footer">
+									<a href="#" class="vertcard__edition">RBK.RU</a>
+									<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
+								</div>
+							</div>
+						</div>
+						<div class="featured-slider__col col-3 col-md-4 col-sm-12">
+							<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
+								<div class="vertcard__head">
+									<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+								</div>
+								<div class="vertcard__footer">
+									<a href="#" class="vertcard__edition">RBK.RU</a>
+									<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
+								</div>
+							</div>
+						</div>
+						<div class="featured-slider__col col-3 col-md-4 mobile-hide">
+							<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
+								<div class="vertcard__head">
+									<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+								</div>
+								<div class="vertcard__footer">
+									<a href="#" class="vertcard__edition">RBK.RU</a>
+									<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
+								</div>
+							</div>
+						</div>
+						<div class="featured-slider__col col-3 tablet-hide">
+							<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
+								<div class="vertcard__head">
+									<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+								</div>
+								<div class="vertcard__footer">
+									<a href="#" class="vertcard__edition">RBK.RU</a>
+									<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
+								</div>
+							</div>
+						</div>
+						<div class="featured-slider__col col-3 col-md-4 mobile-hide">
+							<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
+								<div class="vertcard__head">
+									<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+								</div>
+								<div class="vertcard__footer">
+									<a href="#" class="vertcard__edition">RBK.RU</a>
+									<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
+								</div>
+							</div>
+						</div>
+						<div class="featured-slider__col col-6 col-md-8 col-sm-12">
+							<div class="longcard longcard_high">
+								<div class="longcard__wrap" style="box-shadow: 0 0 15px 15px #566B82; background: #566B82;">
+									<div class="longcard__head">
+										<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+									</div>
+									<div class="longcard__footer" style="box-shadow: 0 0 15px 15px #566B82; background: #566B82;">
+										<a href="#" class="longcard__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, temporibus!</a>
+									</div>
+								</div>
+								<div class="longcard__img">
+									<img src="https://picsum.photos/310/214" alt="img">
+								</div>
+							</div>
+						</div>
+						<div class="featured-slider__col col-3 tablet-hide">
+							<div class="vertcard" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.05) 35.42%, rgba(0, 0, 0, 1) 71.87%, #000000 100%), url(https://picsum.photos/235/325);">
+								<div class="vertcard__head">
+									<a href="#" class="badge badge_light-gray badge_mid">Шоу-бизнес</a>
+								</div>
+								<div class="vertcard__footer">
+									<a href="#" class="vertcard__edition">RBK.RU</a>
+									<a href="#" class="vertcard__title">Анекдот о наглом студенте: Захарова вызвала всеобщий хохот</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="featuredloader">
+					<li></li>
+					<li></li>
+					<li></li>
+				</div>
 			</div>
 		</div>
 	</div>
