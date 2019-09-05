@@ -427,3 +427,159 @@
 			display: block
 	&__footer
 		margin-top: 16px
+
+.longcard
+	position: relative
+	overflow: hidden
+	min-height: 214px
+	display: flex
+	&_high
+		min-height: 325px
+	&__wrap
+		padding: 24px
+		z-index: 1
+		flex-grow: 1
+		flex-direction: column
+		justify-content: space-between
+		display: flex
+		+sm
+			padding: 10px
+			background: none !important
+	&__head
+		position: relative
+		z-index: 2
+		vertical-align: top
+		pointer-events: none
+		display: inline-block
+		& *
+			pointer-events: initial
+		.badge
+			margin: 0 10px 10px 0
+	&__footer
+		margin-top: 20px
+		pointer-events: none
+		+rmin(767)
+			background: none !important
+			box-shadow: none !important
+		+sm
+			position: relative
+			padding: 10px
+			margin: 0 -10px -10px
+		& *
+			pointer-events: initial
+	&__title
+		font-weight: bold
+		font-size: 22px
+		+frob
+		line-height: 1.18
+		color: $white
+		+md
+			font-size: 20px
+		+sm
+			font-size: 18px
+		+hover
+			&:before
+				background-color: rgba(0, 0, 0, 0.4)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			transition: background-color .3s
+	&__img
+		+fs(48.44%)
+		flex-shrink: 0
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		+sm
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			+fs(100%)
+		img
+			object-fit: cover
+			object-position: center
+			width: 100%
+			height: 100%
+			display: block
+.shortcard,
+.vertcard
+	position: relative
+	min-height: 214px
+	padding: 24px
+	z-index: 1
+	flex-direction: column
+	justify-content: space-between
+	display: flex
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	+sm
+		padding: 10px
+	img
+		object-fit: cover
+		object-position: center
+		width: 100%
+		height: 100%
+		display: block
+	&__head
+		position: relative
+		z-index: 2
+		vertical-align: top
+		pointer-events: none
+		display: inline-block
+		& *
+			pointer-events: initial
+		.badge
+			margin: 0 10px 10px 0
+	&__footer
+		margin-top: 20px
+		pointer-events: none
+		& *
+			pointer-events: initial
+	&__title
+		font-weight: bold
+		font-size: 18px
+		+frob
+		line-height: 1.22
+		color: $white
+		+sm
+			font-size: 16px
+			line-height: 1.375
+		+hover
+			&:before
+				background-color: rgba(0, 0, 0, 0.4)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			transition: background-color .3s
+
+.vertcard
+	min-height: 325px
+	padding: 20px
+	+sm
+		padding: 10px
+	&__edition
+		margin-bottom: 12px
+		+frob
+		color: $white
+		opacity: .6
+		+f(12px,500,2.3)
+		text-transform: uppercase
+		display: block
+		transition: opacity .3s
+		+hover
+			opacity: 1
+	&__title
+		display: block

@@ -38,3 +38,61 @@
 				color: #EF4A3E
 		.icon
 			font-size: 20px
+
+.share,
+.assessment
+	+frob
+	+f(13px,400,1.2)
+	color: #B6B6B6
+	&__text
+		margin-bottom: 18px
+		+sm
+			margin-bottom: 8px
+	&__list
+		font-size: 0
+		+sm
+			flex-wrap: wrap
+			display: flex
+		li
+			display: block
+			&:not(:last-child)
+				margin-bottom: 8px
+				+sm
+					margin: 0 10px 8px 0
+		a
+			width: 44px
+			height: 44px
+			color: #999
+			font-size: 19px
+			line-height: 47px
+			text-align: center
+			background-color: #F4F4F4
+			border-radius: 4px
+			transition: color .3s, background-color .3s
+			display: inline-block
+			+sm
+				width: 41px
+				height: 41px
+				line-height: 45px
+			+hover
+				background-color: #3067FF
+				color: $white
+.assessment
+	&__numb
+		color: #1D50DE
+	&__list
+		a
+			color: #979797
+
+.soc-mobile
+	margin: 20px 0 
+	flex-wrap: wrap
+	display: flex
+	display: none
+	+sm
+		display: flex
+	.share,
+	.assessment
+		&:not(:last-child)
+			+sm
+				margin: 0 10px 0 0

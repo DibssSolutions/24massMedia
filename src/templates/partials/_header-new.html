@@ -1,0 +1,31 @@
+<!-- begin header -->
+<header class="header header_mod js-header">
+	<div class="header__inner inner-sm">
+		<button class="btn-nav js-btn-nav" type="button">
+			<span class="btn-nav__line"></span>
+			<span class="btn-nav__line"></span>
+			<span class="btn-nav__line"></span>
+		</button>
+		<!-- begin logo -->
+		<a href="/" class="logo">
+			<h1 class="logo__hide">24сми</h1>
+			<img src="./img/logo.svg" alt="logo">
+		</a>
+		<!-- end logo -->
+		<!-- begin nav -->
+		<div class="nav nav_mod js-nav">
+			<ul class="nav__list">
+				{% for text in ['Онлайн', 'Картина дня'] %}
+				<li class="nav__item">
+					<a href="#" class="nav__link{% if loop.first %} is-active{% endif %}">{{ text }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="nav__btns">
+				<a href="#" class="btn-sm">Добавить источник</a>
+			</div>
+		</div>
+		<!-- end nav -->
+	</div>
+</header>
+<!-- end header -->

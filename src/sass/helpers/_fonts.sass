@@ -9,6 +9,8 @@
 $mainFamily: 'Montserrat'
 $gothamPro: 'GothamPro'
 $OpenSans: 'OpenSans'
+$lora: 'Lora'
+$roboto: 'Roboto'
 
 =fmt
 	font-family: $mainFamily, Arial, sans-serif
@@ -16,6 +18,10 @@ $OpenSans: 'OpenSans'
 	font-family: $gothamPro, Arial, sans-serif
 =fos
 	font-family: $OpenSans, Arial, sans-serif
+=flora
+	font-family: $lora, serif, sans-serif
+=frob
+	font-family: $roboto, Arial, sans-serif
 
 @font-face
 	+fontdefault(normal, 900, $mainFamily)
@@ -99,6 +105,13 @@ $OpenSans: 'OpenSans'
 
 // OPENSANS
 @font-face
+	+fontdefault(normal, 800, $OpenSans)
+	+fontpath('OpenSans Extra Bold', 'OpenSans-ExtraBold', OpenSans-ExtraBold)
+@font-face
+	+fontdefault(italic, 800, $OpenSans)
+	+fontpath('OpenSans Extra BoldItalic', 'OpenSans-ExtraBoldItalic', OpenSans-ExtraBoldItalic)
+
+@font-face
 	+fontdefault(normal, 700, $OpenSans)
 	+fontpath('OpenSans Bold', 'OpenSans-Bold', OpenSans-Bold)
 @font-face
@@ -118,3 +131,45 @@ $OpenSans: 'OpenSans'
 @font-face
 	+fontdefault(italic, 400, $OpenSans)
 	+fontpath('OpenSans Italic', 'OpenSans-Italic', OpenSans-Italic)
+
+// LORA
+@font-face
+	+fontdefault(normal, 400, $lora)
+	+fontpath('Lora', 'Lora-Regular', Lora-Regular)
+@font-face
+	+fontdefault(italic, 400, $lora)
+	+fontpath('Lora Italic', 'Lora-Italic', Lora-Italic)
+@font-face
+	+fontdefault(normal, 700, $lora)
+	+fontpath('Lora Bold', 'Lora-Bold', Lora-Bold)
+@font-face
+	+fontdefault(italic, 700, $lora)
+	+fontpath('Lora Bold Italic', 'Lora-BoldItalic', Lora-BoldItalic)
+
+// ROBOTO
+@font-face
+	+fontdefault(normal, 400, $roboto)
+	+fontpath('Roboto', 'Roboto-Regular', Roboto-Regular)
+@font-face
+	+fontdefault(italic, 400, $roboto)
+	+fontpath('Roboto Italic', 'Roboto-Italic', Roboto-Italic)
+@font-face
+	+fontdefault(normal, 500, $roboto)
+	+fontpath('Roboto Medium', 'Roboto-Medium', Roboto-Medium)
+@font-face
+	+fontdefault(italic, 500, $roboto)
+	+fontpath('Roboto Medium Italic', 'Roboto-MediumItalic', Roboto-MediumItalic)
+@font-face
+	+fontdefault(normal, 700, $roboto)
+	+fontpath('Roboto Bold', 'Roboto-Bold', Roboto-Bold)
+@font-face
+	+fontdefault(italic, 700, $roboto)
+	+fontpath('Roboto Bold Italic', 'Roboto-BoldItalic', Roboto-BoldItalic)
+@font-face
+	+fontdefault(normal, 900, $roboto)
+	+fontpath('Roboto Black', 'Roboto-Black', Roboto-Black)
+@font-face
+	+fontdefault(italic, 900, $roboto)
+	+fontpath('Roboto Black Italic', 'Roboto-BlackItalic', Roboto-BlackItalic)
+
+

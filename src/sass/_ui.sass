@@ -11,6 +11,11 @@
 	background-color: $blue
 	+hover
 		background-color: lighten($blue, 7%)
+	&_mid
+		+frob
+		font-size: 10px
+		font-weight: 400
+		text-transform: initial
 	&_simple
 		+fos
 		padding: 0
@@ -43,6 +48,11 @@
 		background-color: #F15145
 		+hover
 			background-color: lighten(#F15145, 7%)
+	&_light-gray
+		background-color: rgba(0, 0, 0, 0.18)
+		color: $white
+		+hover
+			background-color: rgba(0, 0, 0, 0.35)
 
 .date
 	+f(11px,700,1.45)
@@ -54,6 +64,10 @@
 		opacity: 1
 		color: #CFCFD9
 	&_int
+		text-transform: initial
+	&_simple
+		font-weight: 400
+		font-size: 13px
 		text-transform: initial
 
 .link

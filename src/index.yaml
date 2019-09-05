@@ -22,4 +22,8 @@ PageList:
 - file: ui.html
   ready: 100
 - file: typical-page.html
-  ready: 50
+  ready: 100
+- file: constructor.html
+  ready: 100
+- file: constructor2.html
+  ready: 100

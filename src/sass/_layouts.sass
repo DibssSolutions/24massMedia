@@ -27,6 +27,10 @@
 	overflow: hidden
 	+sm
 		padding-top: 56px
+	.is-constructor &
+		padding-top: 69px
+		+sm
+			padding-top: 58px
 	&__inner
 		+md
 			position: relative
@@ -44,10 +48,27 @@
 	max-width: 1328px
 	+sm
 		padding: 0 20px
+
+.inner-sm,
+.inner-xs
+	margin: 0 auto
+	padding: 0 33px
+	max-width: 1280px
+	+md
+		padding: 0 25px
+	+sm
+		padding: 0 20px
+	+xs
+		padding: 0 10px
+.inner-xs
+	margin: 0 auto
+	padding: 0 33px
+	max-width: 1102px
 .main
 	padding-right: 60px
 	+md
 		padding-right: 16px
+
 .sidebar
 	will-change: min-height
 	&__wrap
