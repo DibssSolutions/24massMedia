@@ -13,6 +13,7 @@
 		&:not(:last-child)
 			margin-bottom: 18px
 	&__soc
+		position: relative
 		padding: 2px 16px 0
 		+fs(14.003%)
 		.share,
@@ -22,7 +23,16 @@
 		&_auto
 			flex: 0 0 auto
 			max-width: 14.003%
-			min-width: 115px
+			min-width: 0
+	&__soc-inner
+		position: absolute
+		top: 0
+		right: 16px
+		min-width: 86px
+		max-width: 200px
+		+r(1259)
+			position: relative
+			right: 0
 	&__sidebar
 		padding: 0 16px
 		+fs(28.572%)
