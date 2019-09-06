@@ -129,6 +129,11 @@
 				transition: color .3s
 				+hover
 					color: #C82525
+
+				.red-theme &
+					color: #C82525
+					&:hover
+						color: #2059F6
 	ul:not([class]),
 	ol:not([class])
 		&:not(:first-child)
@@ -228,6 +233,10 @@
 			transition: color .3s
 			+hover
 				color: #C82525
+			.red-theme &
+				color: #C82525
+				&:hover
+					color: #2059F6
 	img
 		max-width: 100%
 		display: block
@@ -261,6 +270,10 @@
 		transition: color .3s
 		+hover
 			color: #1D50DE
+
+		.red-theme &
+			&:hover
+				color: #C82525
 	&_mod
 		li
 			padding-left: 15px
@@ -270,6 +283,9 @@
 				top: 0
 				left: 0
 				background: #2059F6
+
+				.red-theme &
+					background-color: #C82525
 .articenews
 	padding: 17px
 	font-size: 22px
